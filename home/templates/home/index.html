@@ -2,8 +2,70 @@
 {% load static %}
 
 {% block page_header %}
+    <header>
+        <div class="home-hero bg-dark">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-7">
+                        <div class="home-hero-title mb-4">
+                            <h1>Sprint</h1>
+                        </div>
+                        <div class="home-hero-content">
+                            <p class="white mb-4">Providing businesses with professional looking <br> websites and graphic designs.</p>
+                            <a href="#" class="btn-link">Find out more</a>
+                        </div>
+                    </div>
+                    <div class="col-md-5">
+                        <div class="hero-img">
+                            <img src="{% static 'home-hero.jpg' %}" alt="Somebody working on their laptop">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
 {% endblock %}
 
 {% block content %}
-
+    <section class="about-section">
+        <div class="container">
+            <div class="about-title text-center">
+                <h2>What we do</h2>
+            </div>
+            <div class="row">
+                <div class="col-sm-6 col-lg-3">
+                    <div class="service-icon mb-4">
+                        <i class="fa fa-pen-to-square"></i>
+                    </div>
+                    <div class="service-title">
+                        <h3 class="text-uppercase text-center">Professional Designs</h3>
+                    </div>
+                </div>
+                <div class="col-sm-6 col-lg-3">
+                    <div class="service-icon mb-4">
+                        <i class="fa-solid fa-desktop"></i>
+                    </div>
+                    <div class="service-title">
+                        <h3 class="text-uppercase text-center">Web Templates</h3>
+                    </div>
+                </div>
+                <div class="col-sm-6 col-lg-3">
+                    <div class="service-icon mb-4">
+                        <i class="fa-solid fa-wrench"></i>
+                    </div>
+                    <div class="service-title">
+                        <h3 class="text-uppercase text-center">Maintenance</h3>
+                    </div>
+                </div>
+                <div class="col-sm-6 col-lg-3">
+                    <div class="service-icon mb-4">
+                        <i class="fa-solid fa-people-group"></i>
+                    </div>
+                    <div class="service-title">
+                        <h3 class="text-uppercase text-center">Support</h3>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
 {% endblock content %}

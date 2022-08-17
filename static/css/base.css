@@ -1,0 +1,123 @@
+/* Google Fonts Import */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;700&family=Red+Hat+Display:wght@300;400;700&display=swap');
+
+/* Variable Setup */
+:root {
+    --header-blue: #0077b6;
+    --header-light-blue: #00b4d8;
+    --baby-blue: #90e0ef;
+    --light-blue: #caf0f8;
+}
+
+body {
+    font-family: 'Red Hat Display', sans-serif;
+    font-weight: 400;
+}
+
+/* Heading styles */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-family: 'Poppins', sans-serif;
+}
+
+h1 {
+    font-weight: 300;
+    color: var(--header-blue);
+}
+
+h2 {
+    font-weight: 400;
+    color: var(--header-light-blue);
+}
+
+h3 {
+    font-weight: 700;
+    color: var(--header-blue);
+}
+
+h4 {
+    font-weight: 300;
+    color: var(--header-blue);
+}
+
+h5 {
+    font-weight: 400;
+    color: var(--header-light-blue);
+}
+
+h6 {
+    font-weight: 700;
+    color: var(--header-blue);
+}
+
+/* btn styles */
+.btn-link {
+    display: inline-block;
+    padding: 10px 20px;
+    font-weight: 700;
+    background-color: var(--baby-blue);
+    color: white;
+    text-decoration: none;
+    transition: all 0.25s ease-in-out;
+}
+
+.btn-link:hover {
+    background-color: var(--light-blue);
+    text-decoration: none;
+    color: white;
+}
+
+.white {
+    color: white;
+}
+
+
+/* Home styles */
+.home-hero {
+    padding: 60px 0px;
+}
+
+.home-hero .hero-img {
+    max-width: 100%;
+}
+
+.home-hero .hero-img img {
+    height: 350px;
+    width: 350px;
+    max-width: 100%;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+/* About styles */
+.about-section {
+    padding: 60px 0px;
+}
+.about-section .about-title {
+    margin-bottom: 60px;
+}
+
+.about-section .service-icon i {
+    font-size: 21px;
+    width: 60px;
+    height: 60px;
+    background-color: var(--baby-blue);
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+    margin: 0 auto;
+    border: 1px solid var(--baby-blue);
+    transition: all 0.25 ease-in-out;
+}
+
+.about-section .service-icon i:hover {
+    background-color: white;
+    color: var(--baby-blue);
+    transition: all 0.25s ease-in-out;
+}
