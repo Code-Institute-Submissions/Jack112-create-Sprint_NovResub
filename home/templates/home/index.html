@@ -1,6 +1,10 @@
 {% extends "base.html" %}
 {% load static %}
 
+{% block extra_css %}
+<link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.css"/>
+{% endblock %}
+
 {% block page_header %}
     <header>
         <div class="home-hero bg-dark">
@@ -68,4 +72,33 @@
             </div>
         </div>
     </section>
-{% endblock content %}
+    <section class="testimonials-section">
+        <div class="container">
+            <h2>What our clients say about us</h2>
+            <ul class="testimonial-slider">
+                <li class="testimonial-container">
+                    Slide 1
+                </li>
+                <li class="testimonial-container">
+                    Slide 2
+                </li>
+                <li class="testimonial-container">
+                    Slide 3
+                </li>
+            </ul>
+        </div>
+    </section>
+{% endblock %}
+
+{% block postloadjs %}
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.js"></script>
+<script>
+    console.log('hi')
+    $('.testimonial-slider').slick({
+    slidesToShow: 1,
+    slidesToScroll: 1,
+    autoplay: true,
+    autoplaySpeed: 2000,
+    });
+</script>
+{% endblock %}
