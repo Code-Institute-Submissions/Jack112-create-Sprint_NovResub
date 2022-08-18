@@ -74,12 +74,20 @@
     </section>
     <section class="testimonials-section">
         <div class="container">
-            <h2>What our clients say about us</h2>
-            <ul class="testimonial-slider">
+            <h2 class="text-center">What our clients say about us</h2>
+            <div class="slider-controls d-flex justify-content-end">
+                <button class="prev"><i class='fa fa-angle-left' aria-hidden='true'></i></button>
+                <button class="next"><i class='fa fa-angle-right' aria-hidden='true'></i></button>
+            </div>
+            <ul class="testimonial-slider d-flex">
                 {% for testimonial in testimonials %}
                 <li class="testimonial-container">
-                    {{ testimonial.name }}
-                    {{ testimonial.description }}
+                    <div class="testimonial-description">
+                        {{ testimonial.description }}
+                    </div>
+                    <div class="testimonial-name">
+                        - {{ testimonial.name }}
+                    </div>
                 </li>
                 {% endfor %}
             </ul>
@@ -94,10 +102,10 @@
     slidesToShow: 1,
     slidesToScroll: 1,
     autoplay: true,
-    autoplaySpeed: 2000,
+    autoplaySpeed: 5000,
     dots: false,
-    prevArrow: false,
-    nextArrow: false
+    prevArrow: $('.prev'),
+    nextArrow: $('.next')
     });
 </script>
 {% endblock %}

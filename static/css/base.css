@@ -1,12 +1,19 @@
 /* Google Fonts Import */
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;700&family=Red+Hat+Display:wght@300;400;700&display=swap');
 
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
 /* Variable Setup */
 :root {
     --header-blue: #0077b6;
     --header-light-blue: #00b4d8;
     --baby-blue: #90e0ef;
     --light-blue: #caf0f8;
+    --light-grey: #d7d7d7;
 }
 
 body {
@@ -120,4 +127,49 @@ h6 {
     background-color: white;
     color: var(--baby-blue);
     transition: all 0.25s ease-in-out;
+}
+
+/* Testimonial styles */
+.testimonials-section {
+    padding: 80px 0px;
+    background-color: var(--light-grey);
+}
+
+.testimonials-section .testimonial-slider {
+    margin-top: 50px;
+    padding: 20px;
+    background-color: white;
+}
+
+.testimonial-description {
+    margin-bottom: 50px;
+}
+
+.slick-list {
+    margin: 0 50px !important;
+}
+
+.prev,
+.next {
+    width: 60px;
+    height: 60px;
+    background-color: var(--header-blue);
+    color: white;
+    outline: none;
+    border: 1px solid var(--header-blue);
+    transition: all 0.25s ease-in-out;
+}
+
+.prev:hover,
+.next:hover {
+    background-color: white;
+    color: var(--header-blue);
+}
+
+.slider-controls {
+    margin-top: 30px;
+}
+
+.slider-controls .next {
+    margin-left: 10px;
 }
