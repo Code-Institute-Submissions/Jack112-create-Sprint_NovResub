@@ -76,15 +76,12 @@
         <div class="container">
             <h2>What our clients say about us</h2>
             <ul class="testimonial-slider">
+                {% for testimonial in testimonials %}
                 <li class="testimonial-container">
-                    Slide 1
+                    {{ testimonial.name }}
+                    {{ testimonial.description }}
                 </li>
-                <li class="testimonial-container">
-                    Slide 2
-                </li>
-                <li class="testimonial-container">
-                    Slide 3
-                </li>
+                {% endfor %}
             </ul>
         </div>
     </section>
@@ -99,6 +96,9 @@
     slidesToScroll: 1,
     autoplay: true,
     autoplaySpeed: 2000,
+    dots: false,
+    prevArrow: false,
+    nextArrow: false
     });
 </script>
 {% endblock %}
