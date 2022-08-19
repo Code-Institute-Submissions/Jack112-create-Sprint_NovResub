@@ -19,6 +19,7 @@
 body {
     font-family: 'Red Hat Display', sans-serif;
     font-weight: 400;
+    margin-top: 88px;
 }
 
 /* Heading styles */
@@ -100,9 +101,15 @@ h6 {
     object-fit: cover;
 }
 
+@media only screen and (max-width: 767px) {
+    .home-hero .hero-img {
+        margin-top: 50px;
+    }
+}
+
 /* About styles */
 .about-section {
-    padding: 60px 0px;
+    padding: 100px 0px;
 }
 
 .about-section .about-title {
@@ -182,4 +189,96 @@ h6 {
 
 .slider-controls .next {
     margin-left: 10px;
+}
+
+/* Navbar Styles*/
+
+.navbar {
+    padding: 20px;
+}
+
+.navbar .nav-items {
+    list-style: none;
+    margin-bottom: 0;
+    margin-left: 20px;
+}
+
+.navbar .nav-items .nav-item {
+    margin-left: 20px;
+}
+
+.navbar .nav-items .nav-item a {
+    color: var(--header-light-blue);
+    text-decoration: none;
+    display: inline-block;
+}
+
+.navbar .nav-items .nav-item .nav-item-border {
+    height: 2px;
+    background-color: var(--light-blue);
+    width: 5px;
+    transition: all 0.25s ease-in-out;
+}
+
+.navbar .nav-items .nav-item a:hover + .nav-item-border {
+    width: 100%;
+}
+
+.nav-checkout,
+.nav-bag {
+    margin-left: 40px;
+}
+
+.nav-bag a i:hover {
+    color: var(--header-light-blue);
+    transition: 0.25s ease-in-out;
+}
+.nav-login a i:hover {
+    color: var(--header-light-blue);
+    transition: 0.25s ease-in-out;
+}
+
+.nav-checkout a i:hover {
+    color: var(--header-light-blue);
+    transition: 0.25s ease-in-out;
+}
+
+@media only screen and (max-width: 700px) {
+    body {
+        margin-top: 178px;
+    }
+
+    .navbar .nav-items {
+        width: 100%;
+        margin-left: 0;
+        margin-bottom: 20px;
+        margin-top: 20px;
+    }
+
+    .navbar .nav-items .nav-item {
+        width: 100%;
+    }
+
+    .navbar .nav-items .nav-item:first-child {
+        margin-left: 0;
+    }
+}
+
+@media only screen and (max-width: 425px) {
+    body {
+        margin-top: 264px;
+    }
+
+    .navbar .nav-items {
+        flex-wrap: wrap;
+    }
+
+    .navbar .nav-items .nav-item {
+        margin-left: 0;
+        margin-bottom: 30px;
+    }
+
+    .navbar .nav-items .nav-item {
+        width: 50%;
+    }
 }
