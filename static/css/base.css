@@ -93,7 +93,7 @@ h6 {
 /* Border styles */
 
 .hero-border {
-    width: 30px;
+    width: 50px;
     height: 2px;
     background-color: var(--light-grey);
 }
