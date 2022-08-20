@@ -1,0 +1,28 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block page_header %}
+    <header>
+        <div class="project-hero">
+            <div class="container">
+                <div class="project-image">
+                    <img class="img-thumbnail mb-4" src="{{ project.image.url }}" alt="People enjoying themselves at a festival">
+                </div>
+            </div>
+        </div>
+    </header>
+{% endblock %}
+
+{% block content %}
+<div class="project-container">
+    <div class="container">
+        <div class="row">
+            <div class="col-12">
+                <h1 class="project-title">{{ project.name }}</h1>
+                <p class="project-description">{{ project.description }}</p>
+                <span class="category">{{ project.category }}</span>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock content %}

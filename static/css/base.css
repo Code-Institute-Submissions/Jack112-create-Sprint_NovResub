@@ -73,6 +73,13 @@ h6 {
     transition: all 0.25s ease-in-out;
 }
 
+.category {
+    background-color: var(--baby-blue);
+    color: white;
+    padding: 10px;
+    border-radius: 10%;
+}
+
 .btn-link:hover {
     background-color: var(--light-blue);
     text-decoration: none;
@@ -308,13 +315,15 @@ h6 {
     margin-bottom: 80px;
 }
 
-.projects-container .project-item .project-link {
-    display: inline-block;
+.projects-container .project-item .btn-link {
+    margin-top: 50px;
 }
 
-.category {
-    background-color: var(--baby-blue);
-    color: white;
-    padding: 10px;
-    border-radius: 10%;
+.project-hero {
+    padding-top: 80px;
+    padding-bottom: 40px;
+}
+
+.project-container {
+    margin-bottom: 50px;
 }

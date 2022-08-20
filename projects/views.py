@@ -1,5 +1,6 @@
 from django.shortcuts import render
 from .models import Project
+from django.shortcuts import get_object_or_404
 
 # Create your views here.
 
@@ -15,5 +16,8 @@ def projects(request):
 
 def project(request, project_id):
 
-    context = {}
+    project = get_object_or_404(Project, pk=project_id)
+    context = {
+        'project': project
+    }
     return render(request, 'projects/project.html', context)
