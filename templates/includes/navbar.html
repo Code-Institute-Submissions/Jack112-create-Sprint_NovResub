@@ -1,6 +1,8 @@
 <nav class="navbar bg-dark navbar-dark fixed-top">
     <div class="brand">
-        <span class="h1 white">Sprint</span>
+        <a href="{% url 'home' %}">
+            <span class="h1 white">Sprint</span>
+        </a>
     </div>
     <ul class="nav-items d-flex">
         <li class="nav-item">
@@ -12,7 +14,7 @@
             <div class="nav-item-border"></div>
         </li>
         <li class="nav-item">
-            <a href="#">Projects</a>
+            <a href="{% url 'projects' %}">Projects</a>
             <div class="nav-item-border"></div>
         </li>
         <li class="nav-item">

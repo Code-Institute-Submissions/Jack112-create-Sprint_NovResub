@@ -1,2 +1,37 @@
 {% extends "base.html" %}
 {% load static %}
+
+{% block page_header %}
+    <header>
+        <div class="projects-hero">
+            <div class="container text-center">
+                <h1>Recent Projects</h1>
+                <div class="hero-border"></div>
+            </div>
+        </div>
+    </header>
+{% endblock %}
+
+{% block content %}
+    <div class="projects-container">
+        <div class="container">
+            <div class="row">
+                {% for project in projects%}
+                    <div class="col-md-4">
+                        <div class="project-item">
+                            <div class="project-image">
+                                <img class="img-thumbnail mb-4" src="{{ project.image.url }}" alt="People enjoying themselves at a festival">
+                            </div>
+                            <h2 class="project-title">{{ project.name }}</h2>
+                            <p class="project-description">{{ project.description }}</p>
+                            <span class="category">{{ project.category }}</span>
+                            <br>
+                            <a href="{% url 'project' project.id %}" class="project-link">View</a>
+                        </div>
+                    </div>
+                {% endfor %}
+            </div>
+        </div>
+    </div>
+
+{% endblock %}
