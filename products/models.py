@@ -6,12 +6,12 @@ class Product(models.Model):
     Product Model Setup
     """
 
-    PROJECT_TYPES = (
+    PRODUCT_TYPES = (
         ('T', 'Template'),
         ('D', 'Design'),
     )
 
-    project_type = models.CharField(max_length=1, choices=PROJECT_TYPES)
+    product_type = models.CharField(max_length=1, choices=PRODUCT_TYPES)
     category = models.ForeignKey('projects.Category', null=True, blank=True, on_delete=models.SET_NULL)
     name = models.CharField(max_length=254)
     description = models.TextField()

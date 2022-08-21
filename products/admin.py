@@ -6,7 +6,7 @@ class ProductAdmin(admin.ModelAdmin):
     """
     Product Admin Panel Setup
     """
-    list_filter = ('project_type',)
+    list_filter = ('product_type',)
     ordering = ('name',)
 
 
