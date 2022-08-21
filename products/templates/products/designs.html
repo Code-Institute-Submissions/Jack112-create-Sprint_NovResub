@@ -1,3 +1,57 @@
-{% for product in products %}
-    <h1>{{ product.name }}</h1>
-{% endfor %}
+{% extends "base.html" %}
+{% load static %}
+
+{% block page_header %}
+    <header>
+        <div class="design-product-hero">
+            <div class="container text-center">
+                <h1 class="d-inline-block">
+                    Designs
+                    <div class="hero-border"></div>
+                </h1>
+            </div>
+        </div>
+    </header>
+{% endblock %}
+
+{% block content %}
+    <div class="product-container">
+        <div class="container">
+            <div class="row">
+                {% for product in products %}
+                    <div class="{% if forloop.counter|divisibleby:2 %} order-md-2 {% endif %} col-md-6">
+                        <div class="product-item">
+                            <h2 class="product-title">{{ product.name }}</h2>
+                            <p class="product-description">{{ product.description }}</p>
+                            <span class="category d-inline-block mb-4">{{ product.category }}</span>
+                            <div class="product-price">{{product.price}}</div>
+                            <div class="product-btns">
+                                <a class="more-info-btn btn-link" href="{% url 'product_detail' product.id %}">
+                                    More info
+                                </a>
+                                <a class="add-to-cart-btn btn-link" href="#">
+                                    Add to cart
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    {% if product.image %}
+                        <div class="col-md-6">
+                            <div class="product-image">
+                                <img class="img-thumbnail mb-4" src="{{ product.image.url }}" alt="People enjoying themselves at a festival">
+                            </div>
+                        </div>
+                        
+                        {% else %}
+                        <div class="col-md-6">
+                            <div class="product-image">
+                                <img class="img-thumbnail mb-4" src="{{ MEDIA_URL }}default.png" alt="default product image">
+                            </div>
+                        </div>
+                    {% endif %}
+                {% endfor %}
+            </div>
+        </div>
+    </div>
+
+{% endblock %}

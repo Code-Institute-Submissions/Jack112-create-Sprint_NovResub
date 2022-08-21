@@ -1,0 +1,43 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block page_header %}
+    <header>
+        <div class="single-product-hero">
+            <div class="container text-center">
+                <h1 class="d-inline-block">
+                    Templates
+                    <div class="hero-border"></div>
+                </h1>
+            </div>
+        </div>
+    </header>
+{% endblock %}
+
+{% block content %}
+    <div class="product-single-container">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-8">
+                    <div class="single-product-item">
+                        {% if product.image %}
+                            <div class="product-image">
+                                <img class="img-thumbnail mb-4" src="{{ product.image.url }}" alt="People enjoying themselves at a festival">
+                            </div>
+                            
+                            {% else %}
+                            <div class="product-image">
+                                <img class="img-thumbnail mb-4" src="{{ MEDIA_URL }}default.png" alt="default product image">
+                            </div>
+                        {% endif %}
+                        <h2 class="single-product-title">{{ product.name }}</h2>
+                        <p class="singleproduct-description">{{ product.description }}</p>
+                        <span class="category d-inline-block mb-4">{{ product.category }}</span>
+                        <div class="product-price">{{product.price}}</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+{% endblock %}
