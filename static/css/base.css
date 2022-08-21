@@ -327,3 +327,10 @@ h6 {
 .project-container {
     margin-bottom: 50px;
 }
+
+/* Products styles */
+
+.product-container .product-item {
+    margin-bottom: 60px;
+    border-bottom: 2px solid var(--light-grey);
+}
