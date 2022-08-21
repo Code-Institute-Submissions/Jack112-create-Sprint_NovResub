@@ -86,6 +86,17 @@ h6 {
     color: white;
 }
 
+.more-info-btn {
+    background-color: var(--header-blue);
+    border: 1px solid var(--header-blue);
+    color: white;
+}
+
+.more-info-btn:hover {
+    background-color: white;
+    color: var(--header-blue);
+}
+
 .white {
     color: white;
 }
@@ -331,7 +342,8 @@ h6 {
 /* Products styles */
 
 .template-product-hero,
-.design-product-hero {
+.design-product-hero,
+.single-product-hero {
     padding: 80px 0px;
 }
 

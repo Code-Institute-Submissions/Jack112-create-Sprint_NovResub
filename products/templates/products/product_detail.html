@@ -18,8 +18,8 @@
     <div class="product-single-container">
         <div class="container">
             <div class="row justify-content-center">
-                <div class="col-8">
-                    <div class="single-product-item">
+                <div class="col-12">
+                    <div class="single-product-item text-center">
                         {% if product.image %}
                             <div class="product-image">
                                 <img class="img-thumbnail mb-4" src="{{ product.image.url }}" alt="People enjoying themselves at a festival">
@@ -32,7 +32,9 @@
                         {% endif %}
                         <h2 class="single-product-title">{{ product.name }}</h2>
                         <p class="singleproduct-description">{{ product.description }}</p>
-                        <span class="category d-inline-block mb-4">{{ product.category }}</span>
+                        {% if product.category %}
+                            <span class="category d-inline-block mb-4">{{ product.category }}</span>
+                        {% endif %}
                         <div class="product-price">{{product.price}}</div>
                     </div>
                 </div>
