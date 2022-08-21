@@ -2,6 +2,10 @@ from django.db import models
 
 
 class Project(models.Model):
+    """
+    Project Model Setup
+    """
+
     category = models.ForeignKey('Category', null=True, blank=True, on_delete=models.SET_NULL)
     name = models.CharField(max_length=254)
     description = models.TextField()
@@ -12,6 +16,9 @@ class Project(models.Model):
         return self.name
 
 class Category(models.Model):
+    """
+    Category Model Setup
+    """
 
     class Meta:
         verbose_name_plural = 'Categories'
