@@ -1,0 +1,46 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block page_header %}
+<header>
+    <div class="shopping-bag-hero">
+        <div class="container">
+            <div class="row">
+                <div class="col-12">
+                    <h1>Shopping Bag</h1>
+                    <div class="hero-border"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+{% endblock %}
+
+{% block content %}
+
+<div class="shopping-bag-container">
+    <div class="container">
+        {% if bag_items %}
+            <div class="row">
+                <div class="col-12">
+                    item
+                </div>
+            </div>
+        {% else %}
+        <div class="row">
+            <div class="col-12">
+                <div class="no-items d-flex align-items-center">
+                    <i class="fa-solid fa-heart-crack"></i>
+                    <p class="mb-0 ml-2">It looks like you don't have any items in your shopping bag.</p>
+                </div>
+                <div class="shop-redirects">
+                    <a href="{% url 'templates' %}" class="shop-templates btn-link">Shop our templates</a>
+                    <a href="{% url 'designs' %}" class="shop-designs btn-link">Shop our designs</a>
+                </div>
+            </div>
+        </div>
+        {% endif %}
+    </div>
+</div>
+
+{% endblock %}

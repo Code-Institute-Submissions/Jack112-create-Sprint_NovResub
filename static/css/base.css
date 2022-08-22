@@ -355,3 +355,18 @@ h6 {
 .product-container .product-item .product-btns{
     margin-bottom: 20px;
 }
+
+/* Bag styles */
+
+.shopping-bag-hero {
+    padding: 80px 0px;
+}
+
+.shopping-bag-container .shop-redirects {
+    margin-top: 50px;
+}
+
+.shopping-bag-container .no-items i {
+    color: var(--baby-blue);
+    font-size: 20px;
+}
