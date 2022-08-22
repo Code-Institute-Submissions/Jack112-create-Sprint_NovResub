@@ -19,7 +19,11 @@ def add_to_bag(request, item_id):
     bag = request.session.get('bag', {})
     redirect_url = request.POST.get('redirect_url')
 
-    bag['item_id'] = item_id
+    if item_id not in list(bag.keys()):
+        bag[item_id] = item_id
+        print('not in bag')
+    else:
+        print('already in bag')
 
     request.session['bag'] = bag
     print(request.session['bag'])
