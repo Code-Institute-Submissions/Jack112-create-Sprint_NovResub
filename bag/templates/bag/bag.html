@@ -22,11 +22,33 @@
     <div class="container">
         {% if bag_items %}
             <div class="row">
+                {% for item in bag_items %}
                 <div class="col-12">
-                    item
+                    <div class="bag-items d-flex flex-wrap">
+                        {% if item.product.image %}
+                            <div class="product-image">
+                                <img class="img-thumbnail mb-4" src="{{ item.product.image.url }}" alt="code on a laptop screen">
+                            </div>
+                            
+                            {% else %}
+                            <div class="product-image">
+                                <img class="img-thumbnail mb-4" src="{{ MEDIA_URL }}default.png" alt="default product image">
+                            </div>
+                        {% endif %}
+                        <div class="bag-item-info">
+                            <h2>{{ item.product }}</h2>
+                            {% if item.product.category %}
+                            <span class="category d-inline-block mb-4">{{ item.product.category }}</span>
+                            {% endif %}
+                            <div class="product-price"><i class="fas fa-euro-sign"></i>{{ item.product.price }}</div>
+                        </div>
+                    </div>
                 </div>
+                {% endfor %}
             </div>
         {% else %}
+        <div class="col-12">
+        </div>
         <div class="row">
             <div class="col-12">
                 <div class="no-items d-flex align-items-center">
@@ -39,6 +61,12 @@
                 </div>
             </div>
         </div>
+        {% endif %}
+        {% if bag_items %}
+            <div class="bag-total d-flex">
+                <p>Bag Total:</p>
+                <span class="bag-total-price"><strong><i class="fas fa-euro-sign"></i>{{ total }}</strong></span>
+            </div>
         {% endif %}
     </div>
 </div>

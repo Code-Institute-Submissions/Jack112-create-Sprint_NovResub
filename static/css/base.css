@@ -370,3 +370,29 @@ h6 {
     color: var(--baby-blue);
     font-size: 20px;
 }
+
+.shopping-bag-container .bag-items .product-image {
+    max-width: 270px;
+}
+
+.shopping-bag-container .bag-items .bag-item-info {
+    margin-left: 100px;
+}
+
+.shopping-bag-container .bag-items {
+    margin-bottom: 50px;
+}
+
+.bag-gold {
+    color: gold;
+}
+
+.bag-total-price {
+    margin-left: 20px;
+}
+
+@media only screen and (max-width: 513px) {
+    .shopping-bag-container .bag-items .bag-item-info {
+        margin-left: 0px;
+    }
+}
