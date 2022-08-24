@@ -43,6 +43,10 @@
                             <div class="product-price"><i class="fas fa-euro-sign"></i>{{ item.product.price }}</div>
                         </div>
                     </div>
+                    <form action="{% url 'remove_item' item.product.id %}" method="post">
+                        {% csrf_token %}
+                        <input type="submit" value="Remove item">
+                    </form>
                 </div>
                 {% endfor %}
             </div>
