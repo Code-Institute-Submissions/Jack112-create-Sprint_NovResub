@@ -1,0 +1,18 @@
+<div class="toast toast-warning" data-autohide="false">
+    <div class="toast-header">
+      <button type="button" class="close">&times;</button>
+      <span class="alert-danger">Warning!</span>
+    </div>
+    <div class="toast-body">
+      {{ message }}
+    </div>
+</div>
+
+{% block postloadjs %}
+<script>
+    $(document).ready(function(){
+      $('.toast').toast('show');
+      console.log($('.toast'));
+    });
+</script>
+{% endblock %}
