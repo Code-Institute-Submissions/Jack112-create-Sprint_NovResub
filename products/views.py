@@ -38,8 +38,16 @@ def product_detail(request, product_id):
 
     product = get_object_or_404(Product, pk=product_id)
 
+    print(product.product_type)
+
+    if product.product_type == 'T':
+        title = 'Templates'
+    else:
+        title = 'Designs'
+
     context = {
-        'product': product
+        'product': product,
+        'title': title,
     }
 
     return render(request, 'products/product_detail.html', context)
