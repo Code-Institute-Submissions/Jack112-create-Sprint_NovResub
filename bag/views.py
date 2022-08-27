@@ -26,6 +26,7 @@ def add_to_bag(request, item_id):
         print('not in bag')
         messages.success(request, f'{product.name} was successfully added to your bag!')
     else:
+        messages.info(request, f'{product.name} is already in your bag!')
         print('already in bag')
 
     request.session['bag'] = bag
