@@ -402,3 +402,9 @@ h6 {
 .toast {
     margin-left: auto;
 }
+
+/* Checkout styles */
+
+.checkout-hero {
+    padding: 80px 0px;
+}

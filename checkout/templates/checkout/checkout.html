@@ -1,0 +1,34 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block page_header %}
+    <header>
+        <div class="checkout-hero">
+            <div class="container">
+                <div class="row">
+                    <div class="col-12">
+                        <div class="checkout-hero-title mb-4">
+                            <h1>Checkout</h1>
+                            <div class="hero-border"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+{% endblock %}
+
+{% block content %}
+    <section class="checkout-container">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6">
+                    Checkout form
+                </div>
+                <div class="col-md-6">
+                    checkout items
+                </div>
+            </div>
+        </div>
+    </section>
+{% endblock %}
