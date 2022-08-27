@@ -1,4 +1,4 @@
-from django.shortcuts import render, redirect
+from django.shortcuts import render, redirect, get_object_or_404
 from products.models import Product
 from django.contrib import messages
 
@@ -40,9 +40,11 @@ def remove_item(request, item_id):
     """
 
     bag = request.session.get('bag', {})
+    product = get_object_or_404(Product, pk=item_id)
 
     if item_id in list(bag.keys()):
         del bag[item_id]
+        messages.success(request, f'{product.name} was successfully removed from your bag!')
 
     request.session['bag'] = bag
-    return render(request, 'bag/bag.html')
+    return redirect('bag')
