@@ -23,9 +23,34 @@
         <div class="container">
             <div class="row">
                 <div class="col-md-6">
-                    <form class="checkout-form" action="{% url 'checkout' %}" method="post">
+                    <form class="checkout-form" id="payment-form" action="{% url 'checkout' %}" method="post">
                         {% csrf_token %}
-                        {{ order_form }}
+                        {% crispy order_form %}
+                        <fieldset class="px-3">
+                            <legend class="fieldset-label small text-black px-2 w-auto">Payment</legend>
+                            <!-- A Stripe card element will go here -->
+                            <div class="mb-3" id="card-element"></div>
+                            <!-- Used to display form errors -->
+                            <div class="mb-3 text-danger" id="card-errors" role="alert"></div>
+                            <a href="{% url 'bag' %}" class="btn-link">
+                                <span class="icon">
+                                    <i class="fas fa-chevron-left"></i>
+                                </span>
+                                <span class="font-weight-bold">Adjust Bag</span>
+                            </a>
+                            <button id="submit-button" class="order-btn">
+                                <span class="font-weight-bold">Complete Order</span>
+                                <span class="icon">
+                                    <i class="fas fa-lock"></i>
+                                </span>
+                            </button>
+                            <p class="charged-amount">
+                                <span class="icon">
+                                    <i class="fas fa-exclamation-circle"></i>
+                                </span>
+                                <span>Your card will be charged <strong>${{ order_total }}</strong></span>
+                            </p>
+                        </fieldset>
                         <input type="submit" value="Submit">
                     </form>
                 </div>
