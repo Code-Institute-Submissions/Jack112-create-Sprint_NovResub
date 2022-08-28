@@ -41,12 +41,12 @@
                             <span class="category d-inline-block mb-4">{{ item.product.category }}</span>
                             {% endif %}
                             <div class="product-price"><i class="fas fa-euro-sign"></i>{{ item.product.price }}</div>
+                            <form action="{% url 'remove_item' item.product.id %}" method="post">
+                                {% csrf_token %}
+                                <input class="mt-3" type="submit" value="Remove item">
+                            </form>
                         </div>
                     </div>
-                    <form action="{% url 'remove_item' item.product.id %}" method="post">
-                        {% csrf_token %}
-                        <input type="submit" value="Remove item">
-                    </form>
                 </div>
                 {% endfor %}
             </div>
@@ -67,10 +67,16 @@
         </div>
         {% endif %}
         {% if bag_items %}
-            <div class="bag-total d-flex">
-                <p>Bag Total:</p>
+            <div class="bag-total d-flex mt-3">
+                <p>Bag Total: </p>
                 <span class="bag-total-price"><strong><i class="fas fa-euro-sign"></i>{{ total }}</strong></span>
             </div>
+            <a href="{% url 'checkout' %}" class="btn-link">
+                <span class="font-weight-bold">Complete Order</span>
+                <span class="icon">
+                    <i class="fas fa-lock"></i>
+                </span>
+            </a>
         {% endif %}
     </div>
 </div>

@@ -408,3 +408,13 @@ h6 {
 .checkout-hero {
     padding: 80px 0px;
 }
+
+.checkout-items {
+    max-height: 500px;
+    overflow: scroll;
+    padding: 10px;
+}
+
+#submit-button {
+    padding: 10px 20px;
+}

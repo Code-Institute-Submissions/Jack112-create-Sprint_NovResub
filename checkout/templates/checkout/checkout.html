@@ -22,12 +22,12 @@
     <section class="checkout-container">
         <div class="container">
             <div class="row">
-                <div class="col-md-6">
+                <div class="col-md-6 order-2 order-md-1">
                     <form class="checkout-form" id="payment-form" action="{% url 'checkout' %}" method="post">
                         {% csrf_token %}
                         {% crispy order_form %}
-                        <fieldset class="px-3">
-                            <legend class="fieldset-label small text-black px-2 w-auto">Payment</legend>
+                        <fieldset class="">
+                            <legend class="fieldset-label">Payment</legend>
                             <!-- A Stripe card element will go here -->
                             <div class="mb-3" id="card-element"></div>
                             <!-- Used to display form errors -->
@@ -48,14 +48,34 @@
                                 <span class="icon">
                                     <i class="fas fa-exclamation-circle"></i>
                                 </span>
-                                <span>Your card will be charged <strong>${{ order_total }}</strong></span>
+                                <span>Your card will be charged <strong><i class="fas fa-euro-sign"></i>{{ order_total }}</strong></span>
                             </p>
                         </fieldset>
                         <input type="submit" value="Submit">
                     </form>
                 </div>
-                <div class="col-md-6">
-                    checkout items
+                <div class="col-md-6 order-1 order-md-2">
+                    <div class="checkout-items mb-3 mb-md-0">
+                        <div class="order-summary">
+                            <p>Order summary ({{ bag_items|length }}) <i class="fas fa-chevron-down ml-3"></i></p>
+                        </div>
+                        {% for item in bag_items %}
+                            <div class="checkout-item mb-4">
+                                {% if item.product.image %}
+                                    <div class="product-image">
+                                        <img class="img-thumbnail mb-4" src="{{ item.product.image.url }}">
+                                    </div>
+                            
+                                {% else %}
+                                    <div class="product-image">
+                                        <img class="img-thumbnail mb-4" src="{{ MEDIA_URL }}default.png" alt="default product image">
+                                    </div>
+                                {% endif %}
+                                <h2>{{ item.product.name }}</h2>
+                                <div class="product-price"><i class="fas fa-euro-sign"></i>{{ item.product.price }}</div>
+                            </div>
+                        {% endfor %}
+                    </div>
                 </div>
             </div>
         </div>
