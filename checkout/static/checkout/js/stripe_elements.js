@@ -25,7 +25,25 @@ var style = {
         iconColor: '#dc3545'
     }
 };
+
 var card = elements.create('card', {style: style});
 card.mount('#card-element');
 
-console.log('checkout');
+
+// Handle validation errors on the card element
+
+card.addEventListener('change', function(e) {
+    var errorDiv = document.getElementById('card-errors');
+    if (e.error) {
+        var html = `
+        <span class="card-error">
+            <i class="fas fa-times"></i>
+        </span>
+        <span>${e.error.message}</span>
+        `
+
+        $(errorDiv).html(html);
+    } else {
+        errorDiv.textContent = '';
+    }
+});
