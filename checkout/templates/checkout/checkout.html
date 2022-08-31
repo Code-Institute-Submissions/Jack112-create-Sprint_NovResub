@@ -25,8 +25,8 @@
                 <div class="col-md-6 order-2 order-md-1">
                     <form class="checkout-form" id="payment-form" action="{% url 'checkout' %}" method="post">
                         {% csrf_token %}
-                        {% crispy order_form %}
-                        <fieldset class="">
+                        {{order_form|crispy}}
+                        <fieldset class="fieldset-container">
                             <legend class="fieldset-label">Payment</legend>
                             <!-- A Stripe card element will go here -->
                             <div class="mb-3" id="card-element"></div>
@@ -51,7 +51,6 @@
                                 <span>Your card will be charged <strong><i class="fas fa-euro-sign"></i>{{ order_total }}</strong></span>
                             </p>
                         </fieldset>
-                        <input type="submit" value="Submit">
                     </form>
                 </div>
                 <div class="col-md-6 order-1 order-md-2">
