@@ -1,1 +1,37 @@
-<h1>Checkout success</h1>
+{% extends "base.html" %}
+{% load static %}
+
+{% block page_header %}
+<header>
+    <div class="checkout-success-hero">
+        <div class="container">
+            <div class="row">
+                <div class="col-12">
+                    <h1>Checkout Success</h1>
+                    <div class="hero-border"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+{% endblock %}
+
+{% block content %}
+    <div class="checkout-success-container">
+        <div class="container">
+            <div class="row">
+                <div class="col-12">
+                    <p>Your order was successful!</p>
+                    <p>Your order information is below. A confirmation email will be sent to <strong>{{ order.email }}</strong>.</p>
+                    <p>Thank you for shopping with us!</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="checkout-items">
+            <div class="row">
+                
+            </div>
+        </div>
+    </div>
+{% endblock %}
