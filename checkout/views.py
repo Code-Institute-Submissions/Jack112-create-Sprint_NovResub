@@ -36,9 +36,7 @@ def checkout(request):
             for item_id, item_data in bag.items():
                 try:
                     product = Product.objects.get(id=item_id)
-                    print(type(item_data))
                     if isinstance(item_data, str):
-                        print('is an instance')
                         order_line_item = OrderLineItem(
                             order=order,
                             product=product,
