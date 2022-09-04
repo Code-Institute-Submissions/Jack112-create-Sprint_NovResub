@@ -54,12 +54,17 @@ var form = document.getElementById('payment-form');
 form.addEventListener('submit', function(ev) {
     ev.preventDefault();
     card.update({ 'disabled': true});
+    $('.spinner-container').fadeIn();
+    $('.spinner-container').css('display', 'flex');
+    $('.spinner-container').css('justify-content', 'center');
+    $('.spinner-container').css('align-items', 'center');
     stripe.confirmCardPayment(clientSecret, {
         payment_method: {
             card: card,
         }
     }).then(function(result) {
         if (result.error) {
+            $('.spinner-container').fadeOut();
             var errorDiv = document.getElementById('card-errors');
             var html = `
                 <span class="icon" role="alert">
@@ -69,6 +74,7 @@ form.addEventListener('submit', function(ev) {
             $(errorDiv).html(html);
             card.update({ 'disabled': false});
         } else {
+            $('.spinner-container').fadeOut();
             if (result.paymentIntent.status === 'succeeded') {
                 form.submit();
             }

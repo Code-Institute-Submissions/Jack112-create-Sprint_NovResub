@@ -419,3 +419,17 @@ h6 {
 #submit-button {
     padding: 10px 20px;
 }
+
+.checkout-container {
+    position: relative;
+}
+
+.checkout-container .spinner-container {
+    display: none;
+    background-color:rgba(106, 100, 100, 0.3);
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+}
