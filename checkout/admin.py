@@ -7,7 +7,7 @@ class OrderLineItemAdmin(admin.ModelAdmin):
 
 
 class OrderAdmin(admin.ModelAdmin):
-    readonly_fields = ('order_total', 'order_number')
+    readonly_fields = ('order_total', 'order_number',)
 
 
 admin.site.register(Order, OrderAdmin)
