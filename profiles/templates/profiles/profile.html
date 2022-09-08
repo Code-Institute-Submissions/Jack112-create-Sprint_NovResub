@@ -7,11 +7,38 @@
 
 {% block page_header %}
     <header>
-
+        <div class="profile-hero bg-dark">
+            <div class="container">
+                <h1 class="d-inline-block">
+                    My Profile:
+                    <div class="hero-border"></div>
+                </h1>
+            </div>
+        </div>
     </header>
 {% endblock %}
 
 {% block content %}
+
+<div class="profile-content">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-6">
+                <form action="{% url 'profile' %}" method="POST" id="profile-update-form">
+                    {% csrf_token %}
+                    {{form|crispy}}
+                    <button class="btn-link">Update Information</button>
+                </form>
+            </div>
+            <div class="col-md-6">
+                <div class="order-history">
+                    <p>Order history</p>
+                    {{ orders}}
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
 
 {% endblock content %}
 
