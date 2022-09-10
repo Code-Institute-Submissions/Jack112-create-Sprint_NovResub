@@ -33,7 +33,22 @@
             <div class="col-md-6">
                 <div class="order-history">
                     <p>Order history</p>
-                    {{ orders}}
+                    {% for order in orders %}
+                        <div class="order-container">
+                            <strong>Order number: {{order.order_number}}</strong>
+                            <div class="order-items">
+                                <p class="order-items-heading"><strong>Order items:</strong></p>
+                                <ul class="list-unstyled">
+                                    {% for item in order.lineitems.all %}
+                                        <li class="order-item">
+                                            {{ item.product.name }} - <i class="fas fa-euro-sign"></i>{{item.product.price}}
+                                        </li>
+                                    {% endfor %}
+                                </ul>
+                                <p class="order-total"><strong>Order total: <i class="fas fa-euro-sign"></i>{{ order.order_total }}</strong></p>
+                            </div>
+                        </div>
+                    {% endfor %}
                 </div>
             </div>
         </div>
@@ -41,7 +56,3 @@
 </div>
 
 {% endblock content %}
-
-{% block postloadjs %}
-
-{% endblock %}

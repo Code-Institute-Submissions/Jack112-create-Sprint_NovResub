@@ -11,3 +11,22 @@
     display: flex;
     margin-left: auto;
 }
+
+.order-history {
+    border-left: 1px solid rgb(122, 122, 122);
+    border-right: 1px solid rgb(122, 122, 122);
+    padding: 0px 10px;
+}
+
+.order-history .order-container {
+    border: 1px solid black;
+    padding: 20px;
+}
+
+.order-history .order-container .order-items {
+    margin: 20px 0px;
+}
+
+.order-history .order-container .order-items .order-items-heading {
+    margin-bottom: 0;
+}
