@@ -16,11 +16,14 @@
     border-left: 1px solid rgb(122, 122, 122);
     border-right: 1px solid rgb(122, 122, 122);
     padding: 0px 10px;
+    max-height: 570px;
+    overflow: auto;
 }
 
 .order-history .order-container {
     border: 1px solid black;
     padding: 20px;
+    margin-bottom: 20px;
 }
 
 .order-history .order-container .order-items {

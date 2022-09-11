@@ -5,6 +5,7 @@ from django.views.decorators.http import require_POST
 from .forms import OrderForm
 from products.models import Product
 from .models import OrderLineItem, Order
+from profiles.models import UserProfile
 from bag.contexts import bag_contents
 import stripe
 import json
@@ -113,6 +114,12 @@ def checkout_success(request, order_number):
 
     order = get_object_or_404(Order, order_number=order_number)
     messages.success(request, f'order successfully processed! Your order number is {order.order_number}')
+
+    if request.user.is_authenticated:
+        profile = UserProfile.objects.get(user=request.user)
+        # Attach the user's profile to the order
+        order.user_profile = profile
+        order.save()
 
     if 'bag' in request.session:
         del request.session['bag']

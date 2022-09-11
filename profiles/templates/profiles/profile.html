@@ -36,6 +36,7 @@
                     {% for order in orders %}
                         <div class="order-container">
                             <strong>Order number: {{order.order_number}}</strong>
+                            <p class="text-secondary">Order date: {{ order.date }}</p>
                             <div class="order-items">
                                 <p class="order-items-heading"><strong>Order items:</strong></p>
                                 <ul class="list-unstyled">
