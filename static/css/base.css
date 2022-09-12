@@ -258,16 +258,22 @@ h6 {
     margin-left: 40px;
 }
 
-.nav-bag a i:hover {
+.nav-bag, a i:hover {
     color: var(--header-light-blue);
     transition: 0.25s ease-in-out;
 }
+
 .nav-login a i:hover {
     color: var(--header-light-blue);
     transition: 0.25s ease-in-out;
 }
 
 .nav-checkout a i:hover {
+    color: var(--header-light-blue);
+    transition: 0.25s ease-in-out;
+}
+
+.nav-product a i:hover {
     color: var(--header-light-blue);
     transition: 0.25s ease-in-out;
 }
@@ -343,7 +349,8 @@ h6 {
 
 .template-product-hero,
 .design-product-hero,
-.single-product-hero {
+.single-product-hero,
+.add-product-hero {
     padding: 80px 0px;
 }
 

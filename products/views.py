@@ -1,6 +1,9 @@
 from django.shortcuts import render
 from .models import Product
-from django.shortcuts import get_object_or_404
+from .forms import ProductForm
+from django.contrib import messages
+from django.shortcuts import render, redirect, reverse, get_object_or_404
+from django.contrib.auth.decorators import login_required
 
 
 def view_templates(request):
@@ -51,3 +54,32 @@ def product_detail(request, product_id):
     }
 
     return render(request, 'products/product_detail.html', context)
+
+
+@login_required
+def add_product(request):
+    """ Add a product to the store """
+    if not request.user.is_superuser:
+        messages.error(request, 'Sorry, only store owners can do that.')
+        return redirect(reverse('home'))
+
+    if request.method == 'POST':
+        form = ProductForm(request.POST, request.FILES)
+        if form.is_valid():
+            product = form.save()
+            messages.success(request, 'Successfully added product!')
+            if product.product_type == 'T':
+                return redirect(reverse('template_product_detail', args=[product.id]))
+            elif product.product_type == 'D':
+                return redirect(reverse('design_product_detail', args=[product.id]))
+        else:
+            messages.error(request, 'Failed to add product. Please ensure the form is valid.')
+    else:
+        form = ProductForm()
+        
+    template = 'products/add_product.html'
+    context = {
+        'form': form,
+    }
+
+    return render(request, template, context)

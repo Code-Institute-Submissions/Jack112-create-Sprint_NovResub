@@ -23,8 +23,13 @@
         </li>
     </ul>
     <div class="navigation-end d-flex">
+        {% if request.user.is_superuser %}
+        <div class="nav-product">
+            <a href="{% url 'add_product' %}"><i class="fa-solid fa-plus white"></i></a>
+        </div>
+        {% endif %}
         <div class="nav-login">
-            <a href="{% url 'profile' %}"><i class="fa-solid fa-user white"></i></a>
+            <a href="{% url 'profile' %}" class="d-inline-block ml-3"><i class="fa-solid fa-user white"></i></a>
         </div>
         <div class="nav-shopping d-flex justify-content-end">
             <div class="nav-bag">

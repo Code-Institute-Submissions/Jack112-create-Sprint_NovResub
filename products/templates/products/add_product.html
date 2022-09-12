@@ -1,0 +1,40 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block extra_css %}
+<link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.css"/>
+{% endblock %}
+
+{% block page_header %}
+    <header>
+        <div class="add-product-hero">
+            <div class="container">
+                <div class="hero-title">
+                    <h1>Add New Product</h1>
+                    <div class="hero-border"></div>
+                </div>
+            </div>
+        </div>
+    </header>
+{% endblock %}
+
+{% block content %}
+    <section class="add-product">
+        <div class="container">
+            <div class="row">
+                <div class="col-12">
+                    <form method="POST" action="{% url 'add_product' %}" class="form mb-2" enctype="multipart/form-data">
+                        {% csrf_token %}
+                        {{ form|crispy }}
+                        <a class="btn-link" href="{% url 'templates' %}">Cancel</a>
+                        <button class="btn-link" type="submit">Add Product</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+{% endblock %}
+
+{% block postloadjs %}
+    {{ block.super }}
+{% endblock %}
