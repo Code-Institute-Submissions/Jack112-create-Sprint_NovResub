@@ -4,7 +4,12 @@
       <span class="alert-info">Alert!</span>
     </div>
     <div class="toast-body">
-      {{ message }}
+      <strong>{{ message }}</strong>
+      {% if product.image %}
+        <div class="message-product mt-3">
+          <img class="img-thumbnail mb-4" src="{{ product.image.url }}" alt="product image">
+        </div>
+      {% endif %}
     </div>
 </div>
 

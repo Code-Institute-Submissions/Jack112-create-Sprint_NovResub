@@ -350,7 +350,8 @@ h6 {
 .template-product-hero,
 .design-product-hero,
 .single-product-hero,
-.add-product-hero {
+.add-product-hero,
+.edit-product-hero {
     padding: 80px 0px;
 }
 
