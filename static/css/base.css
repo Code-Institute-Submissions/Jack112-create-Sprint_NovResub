@@ -86,7 +86,8 @@ h6 {
     color: white;
 }
 
-.more-info-btn {
+.more-info-btn,
+.edit-product-btn {
     background-color: var(--header-blue);
     border: 1px solid var(--header-blue);
     color: white;
