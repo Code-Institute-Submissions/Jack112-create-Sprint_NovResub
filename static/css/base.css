@@ -93,7 +93,24 @@ h6 {
     color: white;
 }
 
+.delete-product-btn {
+    background-color: #dc3545 !important;
+    border: 1px solid #dc3545;
+    color: white !important;
+    margin-top: 20px;
+}
+
+.delete-product-btn:hover {
+    background-color: white !important;
+    color: #dc3545 !important;
+}
+
 .more-info-btn:hover {
+    background-color: white;
+    color: var(--header-blue);
+}
+
+.edit-product-btn:hover {
     background-color: white;
     color: var(--header-blue);
 }

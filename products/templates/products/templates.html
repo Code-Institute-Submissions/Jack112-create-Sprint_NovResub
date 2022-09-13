@@ -33,6 +33,9 @@
                                     <a class="edit-product-btn btn-link" href="{% url 'edit_product' product.id %}">
                                         Edit product
                                     </a>
+                                    <a class="delete-product-btn btn-link text-danger" href="{% url 'delete_product' product.id %}">
+                                        Delete product
+                                    </a>
                                 {% endif %}
                             </div>
                         </div>

@@ -116,3 +116,21 @@ def edit_product(request, product_id):
     }
 
     return render(request, template, context)
+
+
+@login_required
+def delete_product(request, product_id):
+    """ delete a store product """
+    if not request.user.is_superuser:
+        messages.error(request, 'Sorry, only store owners can do that.')
+        return redirect(reverse('home'))
+    
+    product = get_object_or_404(Product, pk=product_id)
+    product.delete()
+
+    if product.product_type == 'T':
+        messages.success(request, 'Successfully deleted a template product!')
+        return redirect(reverse('templates'))
+    elif product.product_type == 'D':
+        messages.success(request, 'Successfully deleted a design product!')
+        return redirect(reverse('designs'))
