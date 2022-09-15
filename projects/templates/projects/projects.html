@@ -22,7 +22,11 @@
                     <div class="col-md-4">
                         <div class="project-item">
                             <div class="project-image">
-                                <img class="img-thumbnail mb-4" src="{{ project.image.url }}" alt="People enjoying themselves at a festival">
+                                {% if product.image %}
+                                    <img class="img-thumbnail mb-4" src="{{ project.image.url }}" alt="People enjoying themselves at a festival">
+                                {% else %}
+                                    <img class="img-thumbnail mb-4" src="{{ MEDIA_URL }}default.png" alt="default product image">
+                                {% endif %}
                             </div>
                             <h2 class="project-title">{{ project.name }}</h2>
                             <p class="project-description">{{ project.description }}</p>
