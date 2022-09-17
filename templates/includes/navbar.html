@@ -30,6 +30,7 @@
         {% endif %}
         <div class="nav-login">
             {% if request.user.is_authenticated %}
+                <a href="{% url 'account_logout' %}" class="d-inline-block ml-3"><i class="fa-solid fa-right-from-bracket white"></i></a>
                 <a href="{% url 'profile' %}" class="d-inline-block ml-3"><i class="fa-solid fa-user white"></i></a>
             {% else %}
                 <a href="{% url 'account_login' %}" class="d-inline-block ml-3"><i class="fa-solid fa-user white"></i></a>
