@@ -485,3 +485,10 @@ h6 {
 .header-container button:hover {
     background-color: var(--header-blue);
 }
+
+/* 404 page styles */
+
+.error-hero {
+    padding: 80px 0;
+    color: white;
+}
