@@ -29,7 +29,11 @@
         </div>
         {% endif %}
         <div class="nav-login">
-            <a href="{% url 'profile' %}" class="d-inline-block ml-3"><i class="fa-solid fa-user white"></i></a>
+            {% if request.user.is_authenticated %}
+                <a href="{% url 'profile' %}" class="d-inline-block ml-3"><i class="fa-solid fa-user white"></i></a>
+            {% else %}
+                <a href="{% url 'account_login' %}" class="d-inline-block ml-3"><i class="fa-solid fa-user white"></i></a>
+            {% endif %}
         </div>
         <div class="nav-shopping d-flex justify-content-end">
             <div class="nav-bag">
