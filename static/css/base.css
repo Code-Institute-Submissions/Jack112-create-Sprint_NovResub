@@ -409,6 +409,16 @@ h6 {
     margin-bottom: 50px;
 }
 
+@media only screen and (max-width: 767px) {
+    .shop-redirects a:first-child {
+        margin-bottom: 20px;
+    }
+
+    .shop-redirects a {
+        width: 200px;
+    }
+}
+
 .bag-gold {
     color: gold;
 }
