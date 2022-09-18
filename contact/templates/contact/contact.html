@@ -1,1 +1,46 @@
-<h1>contact</h1>
+{% extends "base.html" %}
+{% load static %}
+
+{% block extra_css %}
+<link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.css"/>
+{% endblock %}
+
+{% block page_header %}
+    <header>
+        <div class="contact-hero">
+            <div class="container">
+                <div class="row">
+                    <div class="col-12">
+                        <div class="contact-hero-title mb-4">
+                            <h1>Contact Us</h1>
+                            <div class="hero-border"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+{% endblock %}
+
+{% block content %}
+    <section class="contact-content">
+        <div class="container">
+            <div class="row">
+                <div class="col-12">
+                    <div class="contact-meta">
+                        <i class="fa-solid fa-location-dot"></i>
+                        Blackrock, <br>Dublin, Ireland
+                    </div>
+                    <a href="mailto:info-sprint-designs@gmail.com" class="contact-meta">
+                        <i class="fa-solid fa-envelope"></i>
+                        info@sprint-designs.gmail.com
+                      </a>
+                      <a href="tel:+3530101010010"  class="contact-meta">
+                        <i class="fa-solid fa-phone"></i>
+                        (+353) 0101010010
+                      </a>
+                </div>
+            </div>
+        </div>
+    </section>
+{% endblock %}
