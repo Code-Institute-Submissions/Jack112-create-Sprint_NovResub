@@ -41,7 +41,7 @@
                             <span class="category d-inline-block mb-4">{{ item.product.category }}</span>
                             {% endif %}
                             <div class="product-price"><i class="fas fa-euro-sign"></i>{{ item.product.price }}</div>
-                            <form action="{% url 'remove_item' item.product.id %}" method="post">
+                            <form class="bag-form" action="{% url 'remove_item' item.product.id %}" method="post">
                                 {% csrf_token %}
                                 <input class="mt-3" type="submit" value="Remove item">
                             </form>

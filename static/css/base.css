@@ -417,6 +417,20 @@ h6 {
     margin-left: 20px;
 }
 
+.bag-form input {
+    padding: 5px;
+    background-color: var(--baby-blue);
+    color: white;
+    border: 1px solid var(--baby-blue);
+    transition: all 0.25s ease-in-out;
+    font-weight: 700;
+}
+
+.bag-form input:hover {
+    background-color: var(--header-blue);
+    border-color: var(--header-blue);
+}
+
 @media only screen and (max-width: 513px) {
     .shopping-bag-container .bag-items .bag-item-info {
         margin-left: 0px;
@@ -503,6 +517,7 @@ h6 {
 footer {
     padding: 50px 0;
     background-color: #fafafa;
+    margin-top: 30px;
 }
 
 footer form {
@@ -530,7 +545,7 @@ footer i {
     text-decoration: none;
 }
 
-.contact-info .contact-meta:first {
+.contact-info .contact-meta:first-child {
     margin-bottom: 10px;
 }
 
