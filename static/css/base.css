@@ -497,3 +497,9 @@ h6 {
 .error-hero i {
     font-size: 50px;
 }
+
+/* Footer styles */
+
+footer {
+    padding: 50px 0;
+}

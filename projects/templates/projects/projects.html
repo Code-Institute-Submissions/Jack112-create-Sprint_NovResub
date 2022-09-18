@@ -22,8 +22,8 @@
                     <div class="col-md-4">
                         <div class="project-item">
                             <div class="project-image">
-                                {% if product.image %}
-                                    <img class="img-thumbnail mb-4" src="{{ project.image.url }}" alt="People enjoying themselves at a festival">
+                                {% if project.image %}
+                                    <img class="img-thumbnail mb-4" src="{{ project.image.url }}" alt="{{ project.name }}">
                                 {% else %}
                                     <img class="img-thumbnail mb-4" src="{{ MEDIA_URL }}default.png" alt="default product image">
                                 {% endif %}
