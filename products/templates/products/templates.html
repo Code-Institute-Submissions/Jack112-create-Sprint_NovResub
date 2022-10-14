@@ -1,62 +1,87 @@
 {% extends "base.html" %}
 {% load static %}
 
+{% block extra_title %} Templates {% endblock %}
+
 {% block page_header %}
-    <header>
-        <div class="template-product-hero">
-            <div class="container text-center">
-                <h1 class="d-inline-block">
-                    Shop our web templates
-                    <span class="hero-border"></span>
-                </h1>
-            </div>
-        </div>
-    </header>
+<header>
+  <div class="hero-global">
+    <div class="container text-center">
+      <h1 class="d-inline-block">
+        Shop our web templates
+        <span class="hero-border"></span>
+      </h1>
+      {% if request.user.is_superuser %}
+        <a class="d-block" href="{% url 'add_product' %}">Add product</a>
+      {% endif %}
+    </div>
+  </div>
+</header>
 {% endblock %}
 
 {% block content %}
-    <div class="product-container">
-        <div class="container">
-            <div class="row">
-                {% for product in products %}
-                    <div class="{% if forloop.counter|divisibleby:2 %} order-md-2 {% endif %} col-md-6">
-                        <div class="product-item">
-                            <h2 class="product-title">{{ product.name }}</h2>
-                            <p class="product-description">{{ product.description }}</p>
-                            <span class="category d-inline-block mb-4">{{ product.category }}</span>
-                            <div class="product-price"><i class="fa-solid fa-euro-sign"></i> {{product.price}}</div>
-                            <div class="product-btns">
-                                <a class="more-info-btn btn-link" href="{% url 'template_product_detail' product.id %}">
-                                    More info
-                                </a>
-                                {% if request.user.is_superuser %}
-                                    <a class="edit-product-btn btn-link" href="{% url 'edit_product' product.id %}">
-                                        Edit product
-                                    </a>
-                                    <a class="delete-product-btn btn-link text-danger" href="{% url 'delete_product' product.id %}">
-                                        Delete product
-                                    </a>
-                                {% endif %}
-                            </div>
-                        </div>
-                    </div>
-                    {% if product.image %}
-                        <div class="col-md-6">
-                            <div class="product-image">
-                                <img class="img-thumbnail mb-4" src="{{ product.image.url }}" alt="{{ product.name }}">
-                            </div>
-                        </div>
-                        
-                        {% else %}
-                        <div class="col-md-6">
-                            <div class="product-image">
-                                <img class="img-thumbnail mb-4" src="{{ MEDIA_URL }}default.png" alt="default product image">
-                            </div>
-                        </div>
-                    {% endif %}
-                {% endfor %}
-            </div>
+<div class="product-container">
+  <div class="container">
+    <div class="row">
+      {% for product in products %}
+      <div
+        class="col-md-6 {% if forloop.counter|divisibleby:2 %} order-md-2 {% endif %}"
+      >
+        <div class="product-item">
+          <h2 class="product-title">{{ product.name }}</h2>
+          <p class="product-description">{{ product.description }}</p>
+          <span class="category d-inline-block mb-4"
+            >{{ product.category }}</span
+          >
+          <div class="product-price">{{product.price}}</div>
+          <div class="product-btns">
+            <a
+              class="more-info-btn btn-link"
+              href="{% url 'template_product_detail' product.id %}"
+            >
+              More info
+            </a>
+            {% if request.user.is_superuser %}
+            <a
+              class="edit-btn btn-link"
+              href="{% url 'edit_product' product.id %}"
+            >
+              Edit product
+            </a>
+            <a
+              class="delete-btn btn-link"
+              href="{% url 'delete_product' product.id %}"
+            >
+              Delete product
+            </a>
+            {% endif %}
+          </div>
         </div>
+      </div>
+      {% if product.image %}
+      <div class="col-md-6">
+        <div class="product-image">
+          <img
+            class="img-thumbnail mb-4"
+            src="{{ product.image.url }}"
+            alt="{{ product.name }}"
+          >
+        </div>
+      </div>
+
+      {% else %}
+      <div class="col-md-6">
+        <div class="product-image">
+          <img
+            class="img-thumbnail mb-4"
+            src="{{ MEDIA_URL }}default.png"
+            alt="default product image"
+          >
+        </div>
+      </div>
+      {% endif %} {% endfor %}
     </div>
+  </div>
+</div>
 
 {% endblock %}

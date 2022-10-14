@@ -1,9 +1,11 @@
 {% extends "base.html" %}
 {% load static %}
 
+{% block extra_title %} Product {% endblock %}
+
 {% block page_header %}
     <header>
-        <div class="single-product-hero">
+        <div class="hero-global">
             <div class="container text-center">
                 <h1 class="d-inline-block">
                     {{ title }}
@@ -24,7 +26,7 @@
                             <div class="product-image">
                                 <img class="img-thumbnail mb-4" src="{{ product.image.url }}" alt="{{ product.name }}">
                             </div>
-                            
+
                             {% else %}
                             <div class="product-image">
                                 <img class="img-thumbnail mb-4" src="{{ MEDIA_URL }}default.png" alt="default product image">
@@ -49,5 +51,53 @@
             </div>
         </div>
     </div>
+    <div class="container">
+        <div class="reviews text-center">
+            <h3>Reviews</h3>
+            <strong>We want to hear your feedback!</strong>
+            {% if request.user.is_authenticated %}
+                <form action="{% url 'add_review' product.id %}" method="post">
+                    {% csrf_token %}
+                    <div class="customer-comment">
+                        <textarea name="content" id="content" placeholder="What do you think about this product?" required></textarea>
+                    </div>
 
+                    <div class="product-rating">
+                        <label for="rating">Product rating:</label>
+
+                        <select name="rating" id="rating">
+                        <option value="1">1</option>
+                        <option value="2">2</option>
+                        <option value="3">3</option>
+                        <option value="4">4</option>
+                        <option value="5">5</option>
+                        </select>
+                    </div>
+                    <input class="btn-link" type="submit" value="Submit review"></input>
+                </form>
+            {% endif %}
+        </div>
+
+        {% if reviews %}
+            <div class="row">
+                {% for review in reviews %}
+                    <div class="col-sm-6">
+                        <div class="review-card">
+                            <h4>
+                                {{ review.content }}
+                            </h4>
+                            <p>
+                                <strong>- {{ review.created_by }}</strong>
+                            </p>
+                            <p>{{ review.rating }}/5</p>
+
+                            {% if request.user == review.created_by or request.user.is_superuser %}
+                                <a href="{% url 'delete_review' review.id %}" class="delete-btn btn-link">Delete review</a>
+                            {% endif %}
+                        </div>
+                    </div>
+                {% endfor %}
+            </div>
+        {% endif %}
+    </div>
 {% endblock %}

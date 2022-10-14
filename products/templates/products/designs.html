@@ -1,14 +1,19 @@
 {% extends "base.html" %}
 {% load static %}
 
+{% block extra_title %} Designs {% endblock %}
+
 {% block page_header %}
     <header>
-        <div class="design-product-hero">
+        <div class="hero-global">
             <div class="container text-center">
                 <h1 class="d-inline-block">
                     Shop our designs
                     <span class="hero-border"></span>
                 </h1>
+                {% if request.user.is_superuser %}
+                    <a class="d-block" href="{% url 'add_product' %}">Add product</a>
+                {% endif %}
             </div>
         </div>
     </header>
@@ -26,16 +31,16 @@
                             {% if product.category %}
                                 <span class="category d-inline-block mb-4">{{ product.category }}</span>
                             {% endif %}
-                            <div class="product-price"><i class="fa-solid fa-euro-sign"></i> {{product.price}}</div>
+                            <div class="product-price">{{product.price}}</div>
                             <div class="product-btns">
                                 <a class="more-info-btn btn-link" href="{% url 'design_product_detail' product.id %}">
                                     More info
                                 </a>
                                 {% if request.user.is_superuser %}
-                                    <a class="edit-product-btn btn-link" href="{% url 'edit_product' product.id %}">
+                                    <a class="edit-btn btn-link" href="{% url 'edit_product' product.id %}">
                                         Edit product
                                     </a>
-                                    <a class="delete-product-btn btn-link text-danger" href="{% url 'delete_product' product.id %}">
+                                    <a class="delete-btn btn-link" href="{% url 'delete_product' product.id %}">
                                         Delete product
                                     </a>
                                 {% endif %}
@@ -48,7 +53,7 @@
                                 <img class="img-thumbnail mb-4" src="{{ product.image.url }}" alt="{{ product.name }}">
                             </div>
                         </div>
-                        
+
                         {% else %}
                         <div class="col-md-6">
                             <div class="product-image">
