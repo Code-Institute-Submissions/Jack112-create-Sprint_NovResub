@@ -1,0 +1,36 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block extra_title %} Single blog {% endblock %}
+
+{% block page_header %}
+    <header>
+        <div class="hero-global">
+            <div class="container">
+                {% if blog.image %}
+                    <div class="blog-image">
+                        <img class="img-thumbnail mb-4" src="{{ blog.image.url }}" alt="{{ blog.name }}">
+                    </div>
+                {% else %}
+                    <div class="blog-image">
+                        <img class="img-thumbnail mb-4" src="{{ MEDIA_URL }}default.png" alt="default blog image">
+                    </div>
+                {% endif %}
+            </div>
+        </div>
+    </header>
+{% endblock %}
+
+{% block content %}
+<div class="blog-container">
+    <div class="container">
+        <div class="row">
+            <div class="col-12">
+                <h1 class="blog-title">{{ blog.title }}</h1>
+                <span><strong>by {{ blog.name }}</strong></span>
+                <p class="blog-content">{{ blog.content }}</p>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock content %}
