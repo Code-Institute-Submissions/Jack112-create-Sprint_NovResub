@@ -1,14 +1,19 @@
 {% extends "base.html" %}
 {% load static %}
 
+{% block extra_title %} Projects {% endblock %}
+
 {% block page_header %}
     <header>
-        <div class="projects-hero">
+        <div class="hero-global">
             <div class="container text-center">
                 <h1 class="d-inline-block">
                     Recent Projects
                     <span class="hero-border"></span>
                 </h1>
+                {% if request.user.is_superuser %}
+                    <a class="d-block" href="{% url 'add_project' %}">Add project</a>
+                {% endif %}
             </div>
         </div>
     </header>
@@ -19,13 +24,13 @@
         <div class="container">
             <div class="row">
                 {% for project in projects%}
-                    <div class="col-md-4">
+                    <div class="col-md-6 col-lg-4">
                         <div class="project-item">
                             <div class="project-image">
                                 {% if project.image %}
                                     <img class="img-thumbnail mb-4" src="{{ project.image.url }}" alt="{{ project.name }}">
                                 {% else %}
-                                    <img class="img-thumbnail mb-4" src="{{ MEDIA_URL }}default.png" alt="default product image">
+                                    <img class="img-thumbnail mb-4" src="{{ MEDIA_URL }}default.png" alt="default project image">
                                 {% endif %}
                             </div>
                             <h2 class="project-title">{{ project.name }}</h2>
@@ -33,6 +38,20 @@
                             <span class="category">{{ project.category }}</span>
                             <br>
                             <a href="{% url 'project' project.id %}" class="btn-link">View</a>
+                            {% if request.user.is_superuser %}
+                            <a
+                              class="edit-btn btn-link"
+                              href="{% url 'edit_project' project.id %}"
+                            >
+                              Edit project
+                            </a>
+                            <a
+                              class="delete-btn btn-link"
+                              href="{% url 'delete_project' project.id %}"
+                            >
+                              Delete project
+                            </a>
+                            {% endif %}
                         </div>
                     </div>
                 {% endfor %}
