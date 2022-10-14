@@ -1,0 +1,35 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block extra_title %} Add testimonial {% endblock %}
+
+{% block page_header %}
+<header>
+  <div class="testimonial-hero">
+    <div class="container">
+      <div class="hero-title">
+        <h1>Add Testimonial</h1>
+        <span class="hero-border"></span>
+      </div>
+    </div>
+  </div>
+</header>
+{% endblock %} {% block content %}
+<div class="add-testimonial">
+  <div class="container">
+    <div class="row">
+      <div class="col-12">
+        <form
+          method="POST"
+          action="{% url 'add_testimonial' %}"
+          class="form mb-2"
+        >
+          {% csrf_token %} {{ form|crispy }}
+          <a class="btn-link" href="{% url 'home' %}">Cancel</a>
+          <button class="btn-link" type="submit">Add Testimonial</button>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
+{% endblock %}

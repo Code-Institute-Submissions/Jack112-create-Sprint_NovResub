@@ -1,0 +1,38 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block extra_title %} Testimonials {% endblock %}
+
+{% block page_header %}
+    <header>
+        <div class="hero-global">
+            <div class="container text-center">
+                <h1 class="d-inline-block">
+                    Testimonials
+                    <span class="hero-border"></span>
+                </h1>
+            </div>
+        </div>
+    </header>
+{% endblock %}
+
+{% block content %}
+    <div class="testimonials-container">
+        <div class="container">
+            <div class="row">
+                {% for testimonial in testimonials %}
+                    <div class="col-md-6 col-lg-4">
+                        <div class="testimonial-item mb-5">
+                            <h2 class="blog-title">Author: {{ testimonial.name }}</h2>
+                            <p class="testimonial-description mb-0">{{ testimonial.description }}</p>
+                            {% if request.user.is_superuser %}
+                                <a class="delete-btn btn-link" href="{% url 'delete_testimonial' testimonial.id  %}">Delete testimonial</a>
+                            {% endif %}
+                        </div>
+                    </div>
+                {% endfor %}
+            </div>
+        </div>
+    </div>
+
+{% endblock %}
