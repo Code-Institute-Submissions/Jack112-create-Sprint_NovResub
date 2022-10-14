@@ -1,7 +1,6 @@
 from django.shortcuts import render
 from testimonials.models import Testimonial
 
-# Create your views here.
 
 def home(request):
     """
