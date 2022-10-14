@@ -3,6 +3,9 @@ from .models import UserProfile
 
 
 class UserProfileForm(forms.ModelForm):
+    """
+    A class to create a model form using the UserProfile model
+    """
     class Meta:
         model = UserProfile
         exclude = ('user',)
@@ -21,7 +24,7 @@ class UserProfileForm(forms.ModelForm):
             'default_county': 'County, State or Locality',
             'default_country': 'Country',
         }
-    
+
         for field in self.fields:
             if self.fields[field].required:
                 self.fields[field].label = f'{labels[field]} *'

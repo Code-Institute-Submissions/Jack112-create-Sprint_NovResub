@@ -5,6 +5,7 @@ from checkout.models import Order
 from .forms import UserProfileForm
 from django.contrib.auth.decorators import login_required
 
+
 @login_required
 def profile(request):
     """
@@ -19,7 +20,9 @@ def profile(request):
             form.save()
             messages.success(request, 'Your profile was successfully updated')
         else:
-            messages.error(request, 'Update failed. Please ensure the form is valid.')
+            messages.error(
+                request,
+                'Update failed. Please ensure the form is valid.')
     else:
         form = UserProfileForm(instance=profile)
 
