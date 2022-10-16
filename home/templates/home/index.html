@@ -2,120 +2,142 @@
 {% load static %}
 
 {% block extra_css %}
-<link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.css"/>
+<link
+  rel="stylesheet"
+  type="text/css"
+  href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.css"
+>
 {% endblock %}
 
+{% block extra_title %} Home {% endblock %}
+
 {% block page_header %}
-    <header>
-        <div class="home-hero bg-dark">
-            <div class="container">
-                <div class="row">
-                    <div class="col-md-7">
-                        <div class="home-hero-title mb-4">
-                            <h1>Sprint</h1>
-                        </div>
-                        <div class="home-hero-content">
-                            <p class="white mb-4">Providing businesses with professional looking <br> websites and graphic designs.</p>
-                            <a href="{% url 'templates' %}" class="btn-link">Find out more</a>
-                        </div>
-                    </div>
-                    <div class="col-md-5">
-                        <div class="hero-img">
-                            <img src="{% static 'home-hero.jpg' %}" alt="Multiple laptop screens placed on a desk">
-                        </div>
-                    </div>
-                </div>
-            </div>
+<header>
+  <div class="hero-global bg-dark">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-7">
+          <div class="home-hero-title mb-4">
+            <h1>Sprint</h1>
+          </div>
+          <div class="home-hero-content">
+            <p class="white mb-4">
+              Providing businesses with professional looking <br>
+              websites and graphic designs.
+            </p>
+            <a href="{% url 'templates' %}" class="btn-link">Find out more</a>
+          </div>
         </div>
-    </header>
+        <div class="col-md-5">
+          <div class="hero-img">
+            <img
+              src="{% static 'home-hero.jpg' %}"
+              alt="Multiple laptop screens placed on a desk"
+            >
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</header>
 {% endblock %}
 
 {% block content %}
-    <section class="about-section">
-        <div class="container">
-            <div class="about-title text-center">
-                <h2>What we do</h2>
-            </div>
-            <div class="row">
-                <div class="col-sm-6 col-lg-3">
-                    <div class="service-item">
-                        <div class="service-icon mb-4">
-                            <i class="fa fa-pen-to-square"></i>
-                        </div>
-                        <div class="service-title">
-                            <h3 class="text-uppercase text-center">Professional Designs</h3>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-sm-6 col-lg-3">
-                    <div class="service-item">
-                        <div class="service-icon mb-4">
-                            <i class="fa-solid fa-desktop"></i>
-                        </div>
-                        <div class="service-title">
-                            <h3 class="text-uppercase text-center">Web Templates</h3>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-sm-6 col-lg-3">
-                    <div class="service-item">
-                        <div class="service-icon mb-4">
-                            <i class="fa-solid fa-wrench"></i>
-                        </div>
-                        <div class="service-title">
-                            <h3 class="text-uppercase text-center">Maintenance</h3>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-sm-6 col-lg-3">
-                    <div class="service-item">
-                        <div class="service-icon mb-4">
-                            <i class="fa-solid fa-people-group"></i>
-                        </div>
-                        <div class="service-title">
-                            <h3 class="text-uppercase text-center">Support</h3>
-                        </div>
-                    </div>
-                </div>
-            </div>
+<section class="about-section">
+  <div class="container">
+    <div class="about-title text-center">
+      <h2>What we do</h2>
+    </div>
+    <div class="row">
+      <div class="col-sm-6 col-lg-3">
+        <div class="service-item">
+          <div class="service-icon mb-4">
+            <i class="fa fa-pen-to-square"></i>
+          </div>
+          <div class="service-title">
+            <h3 class="text-uppercase text-center">Professional Designs</h3>
+          </div>
         </div>
-    </section>
-    <section class="testimonials-section">
-        <div class="container">
-            <h2 class="text-center">What our clients say about us</h2>
-            <div class="slider-controls d-flex justify-content-center">
-                <button class="prev"><i class='fa fa-angle-left' aria-hidden='true'></i></button>
-                <button class="next"><i class='fa fa-angle-right' aria-hidden='true'></i></button>
-            </div>
-            <ul class="testimonial-slider d-flex">
-                {% for testimonial in testimonials %}
-                <li class="testimonial-container">
-                    <div class="testimonial-description">
-                        {{ testimonial.description }}
-                    </div>
-                    <div class="testimonial-name">
-                        - {{ testimonial.name }}
-                    </div>
-                </li>
-                {% endfor %}
-            </ul>
+      </div>
+      <div class="col-sm-6 col-lg-3">
+        <div class="service-item">
+          <div class="service-icon mb-4">
+            <i class="fa-solid fa-desktop"></i>
+          </div>
+          <div class="service-title">
+            <h3 class="text-uppercase text-center">Web Templates</h3>
+          </div>
         </div>
-    </section>
+      </div>
+      <div class="col-sm-6 col-lg-3">
+        <div class="service-item">
+          <div class="service-icon mb-4">
+            <i class="fa-solid fa-wrench"></i>
+          </div>
+          <div class="service-title">
+            <h3 class="text-uppercase text-center">Maintenance</h3>
+          </div>
+        </div>
+      </div>
+      <div class="col-sm-6 col-lg-3">
+        <div class="service-item">
+          <div class="service-icon mb-4">
+            <i class="fa-solid fa-people-group"></i>
+          </div>
+          <div class="service-title">
+            <h3 class="text-uppercase text-center">Support</h3>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Only display testimonials section if there are testimonials -->
+  <section class="testimonials-section">
+    <div class="container">
+      <h2 class="text-center">What our clients say about us</h2>
+      <div class="slider-controls d-flex justify-content-center">
+        <button class="prev">
+          <i class="fa fa-angle-left" aria-hidden="true"></i>
+        </button>
+        <button class="next">
+          <i class="fa fa-angle-right" aria-hidden="true"></i>
+        </button>
+      </div>
+      <ul class="testimonial-slider d-flex">
+        {% for testimonial in testimonials %}
+        <li class="testimonial-container">
+          <div class="testimonial-description">{{ testimonial.description }}</div>
+          <div class="testimonial-name">- {{ testimonial.name }}</div>
+        </li>
+        {% endfor %}
+      </ul>
+      <p class="text-center">
+        We want to hear your feedback! Click
+        <a href="{% url 'add_testimonial' %}">here</a> to add a testimonial.
+      </p>
+    </div>
+  </section>
 {% endblock %}
 
 {% block postloadjs %}
-    {{ block.super }}
-<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.js"></script>
-<script>
+
+  {{ block.super }}
+  <script
+    type="text/javascript"
+    src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.js"
+  ></script>
+  <script>
     // Slick slider JS initialization
-    $('.testimonial-slider').slick({
-    slidesToShow: 1,
-    slidesToScroll: 1,
-    autoplay: true,
-    autoplaySpeed: 5000,
-    dots: false,
-    prevArrow: $('.prev'),
-    nextArrow: $('.next')
+    $(".testimonial-slider").slick({
+      slidesToShow: 1,
+      slidesToScroll: 1,
+      autoplay: true,
+      autoplaySpeed: 5000,
+      dots: false,
+      prevArrow: $(".prev"),
+      nextArrow: $(".next"),
     });
-</script>
+  </script>
 {% endblock %}
