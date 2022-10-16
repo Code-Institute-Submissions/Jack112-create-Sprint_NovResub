@@ -24,7 +24,7 @@
         <div class="container">
             <div class="row">
                 {% for product in products %}
-                    <div class="{% if forloop.counter|divisibleby:2 %} order-md-2 {% endif %} col-md-6">
+                    <div class="col-md-6">
                         <div class="product-item">
                             <h2 class="product-title">{{ product.name }}</h2>
                             <p class="product-description">{{ product.description }}</p>
