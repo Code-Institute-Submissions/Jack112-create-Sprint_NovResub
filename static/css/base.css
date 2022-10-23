@@ -366,6 +366,16 @@ button {
     border-bottom: 2px solid var(--light-grey);
 }
 
+@media only screen and (max-width: 767px) {
+    .product-container .product-item {
+        margin-bottom: 30px;
+    }
+
+    .product-image {
+        margin-bottom: 80px;
+    }
+}
+
 .product-container .product-item .product-btns {
     margin-bottom: 20px;
 }
