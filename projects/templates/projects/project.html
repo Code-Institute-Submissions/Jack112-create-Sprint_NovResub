@@ -5,17 +5,21 @@
 
 {% block page_header %}
     <header>
-        <div class="project-hero">
+        <div class="project-hero hero-global">
             <div class="container">
-                {% if project.image %}
-                    <div class="project-image">
-                        <img class="img-thumbnail mb-4" src="{{ project.image.url }}" alt="{{ project.name }}">
+                <div class="row justify-content-center">
+                    <div class="col-12">
+                        {% if project.image %}
+                            <div class="project-image">
+                                <img class="img-thumbnail mb-4" src="{{ project.image.url }}" alt="{{ project.name }}">
+                            </div>
+                        {% else %}
+                            <div class="project-image">
+                                <img class="img-thumbnail mb-4" src="{{ MEDIA_URL }}default.png" alt="default product image">
+                            </div>
+                        {% endif %}
                     </div>
-                {% else %}
-                    <div class="project-image">
-                        <img class="img-thumbnail mb-4" src="{{ MEDIA_URL }}default.png" alt="default product image">
-                    </div>
-                {% endif %}
+                </div>
             </div>
         </div>
     </header>
@@ -24,7 +28,7 @@
 {% block content %}
 <div class="project-container">
     <div class="container">
-        <div class="row">
+        <div class="row justify-content-center">
             <div class="col-12">
                 <h1 class="project-title">{{ project.name }}</h1>
                 <p class="project-description">{{ project.description }}</p>
