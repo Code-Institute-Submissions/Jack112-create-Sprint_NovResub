@@ -26,7 +26,7 @@
             <div class="row">
                 {% for item in bag_items %}
                 <div class="col-12">
-                    <div class="bag-items d-flex flex-wrap">
+                    <div class="bag-items d-md-flex">
                         {% if item.product.image %}
                             <div class="product-image">
                                 <img class="img-thumbnail mb-4" src="{{ item.product.image.url }}" alt="{{ item.product }}">
@@ -37,7 +37,7 @@
                                 <img class="img-thumbnail mb-4" src="{{ MEDIA_URL }}default.png" alt="default product image">
                             </div>
                         {% endif %}
-                        <div class="bag-item-info">
+                        <div class="bag-item-info ml-md-5">
                             <h2>{{ item.product }}</h2>
                             {% if item.product.category %}
                             <span class="category d-inline-block mb-4">{{ item.product.category }}</span>
@@ -57,7 +57,7 @@
         </div>
         <div class="row">
             <div class="col-12">
-                <div class="no-items d-flex align-items-center">
+                <div class="no-items d-md-flex align-items-center">
                     <i class="fa-solid fa-heart-crack"></i>
                     <p class="mb-0 ml-2">It looks like you don't have any items in your shopping bag.</p>
                 </div>

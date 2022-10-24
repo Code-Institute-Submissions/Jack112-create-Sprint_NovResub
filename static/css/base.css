@@ -416,10 +416,8 @@ button {
 
 .shopping-bag-container .bag-items .product-image {
     max-width: 270px;
-}
-
-.shopping-bag-container .bag-items .bag-item-info {
-    margin-left: 100px;
+    min-width: 270px;
+    margin-bottom: 50px;
 }
 
 .shopping-bag-container .bag-items {
