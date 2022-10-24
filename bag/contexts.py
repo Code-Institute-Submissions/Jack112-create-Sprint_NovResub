@@ -4,7 +4,7 @@ from products.models import Product
 
 def bag_contents(request):
     """
-    Function to render bar items
+    Function to render bag items
     """
 
     bag_items = []

@@ -24,17 +24,14 @@ def add_to_bag(request, item_id):
 
     if item_id not in list(bag.keys()):
         bag[item_id] = item_id
-        print('not in bag')
         messages.success(
             request,
             f'{product.name} was successfully added to your bag!'
         )
     else:
         messages.info(request, f'{product.name} is already in your bag!')
-        print('already in bag')
 
     request.session['bag'] = bag
-    print(request.session['bag'])
     return redirect(redirect_url)
 
 
