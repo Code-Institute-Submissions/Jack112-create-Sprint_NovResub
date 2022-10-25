@@ -535,7 +535,74 @@ Features to be included:
 
 ### Deployment
 
+1. Log into Heroku account and create a new app.
 
+2. Choose an app name and select the closest region.
+
+3. Click the "Create App" button.
+
+4. Click on the "Resources" tab and search for "Heroku Postgres" in the Add-ons section.
+
+5. Add the Heroku Postgres database to the app.
+
+6. Navigate to your projects development environment (GitPod).
+
+7. Create an env.py file to store environment variables.
+
+8. Add env.py file to .gitignore file to hide environment variables.
+
+9. Navigate to settings.py and import the os and dj_database_url packages at the top of the file. Then, in the command line install dj_database_url and psycopg2 so that we can use Postgres. Freeze these installs into the requirements.txt file.
+
+10. Install both the dj_database_url and psycopg2 packages using pip. Freeze the packages into a requirements.txt file by running the following command - pip freeze > requirements. txt
+
+11. Navigate back to your app on Heroku and click the "Settings" tab. Scroll down and click the "reveal config vars" button.
+
+12. Copy the value for the "DATATBASE_URL" key into an environment variable named "DATABASE_URL" in your env.py file in your development environment.
+
+13. Navigate in a browser to Amazon AWS, log in, or create an account and log in.
+
+14. Create the following:
+
+    - Storage Bucket Name
+    - Storage Bucket Region Name
+    - Access Key ID
+    - Secret Access Key
+
+15. Create the following Environment variables in your Heroku app:
+
+    - AWS_ACCESS_KEY_ID="AWS ACCESS KEY ID VALUE"
+    - AWS_SECRET_ACCESS_KEY="AWS SECRET ACCESS KEY VALUE"
+    - STRIPE_PUBLIC_KEY="STRIPE PUBLIC KEY VALUE"
+    - STRIPE_SECRET_KEY="STRIPE SECRET KEY VALUE"
+    - STRIPE_WH_SECRET="STRIPE WEBHOOK VALUE"
+    - SECRET_KEY="SECRET KEY VALUE"
+    - USE_AWS=True
+
+16. Add the following lines of code to your settings.py file in your Django project:
+
+![AWS Setup Code](./docs/aws-setup.png)
+
+17. Navigate in a browser to Stripe.com, log in, or create an account and log in.
+
+18. Create a stripe webhook and copy all keys into heroku app environment variables and env.py file
+
+19. Create the following Environment variables in your env.py file:
+
+    - STRIPE_PUBLIC_KEY="STRIPE PUBLIC KEY VALUE"
+    - STRIPE_SECRET_KEY="STRIPE SECRET KEY VALUE"
+    - STRIPE_WH_SECRET="STRIPE WEBHOOK VALUE"
+    - SECRET_KEY="SECRET KEY VALUE"
+    - DEVELOPMENT=True
+
+20. Install the gunicorn python package using pip and freeze the package to the requirements.txt file.
+
+21. Create a Procfile and add the following - web: YOUR_APP_NAME.wsgi
+
+22. Add Heroku app to the ALLOWED_HOSTS variable inside of settings.py.
+
+23. To use local db while developing and Postgresql for production, add the following lines of code to settings.py.
+
+![Database Config](./docs/database-config.png)
 
 ### Credits
   * [Pexels](https://www.pexels.com/) for the images used throughout the project.
