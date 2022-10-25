@@ -600,7 +600,11 @@ Features to be included:
 
 22. Add Heroku app to the ALLOWED_HOSTS variable inside of settings.py.
 
-23. To use local db while developing and Postgresql for production, add the following lines of code to settings.py.
+23. Navigate to Herouko and then to the deployment tab. Deploy the branch manually.
+
+24. To enable automatic deploys, choose GitHub as the deployment method and connect your heroku app to the project repository.
+
+25. To use local db while developing and Postgresql for production, add the following lines of code to settings.py.
 
 ![Database Config](./docs/database-config.png)
 
