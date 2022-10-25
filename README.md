@@ -532,7 +532,10 @@ Features to be included:
 ![Original layout](./docs/wireframes/web-product-desktop.png)
 
 #### Fixed Bugs
+
 ### Deployment
+
+
 
 ### Credits
   * [Pexels](https://www.pexels.com/) for the images used throughout the project.
