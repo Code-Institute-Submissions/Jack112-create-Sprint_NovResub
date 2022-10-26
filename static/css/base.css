@@ -260,7 +260,6 @@ button {
     color: var(--header-light-blue);
     text-decoration: none;
     display: inline-block;
-    white-space: no-wrap;
 }
 
 .navbar .nav-items .nav-item .nav-item-border {
