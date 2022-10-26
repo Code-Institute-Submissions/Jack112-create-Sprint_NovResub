@@ -53,7 +53,9 @@ def add_blog(request):
             return (redirect('blog'))
         else:
             messages.error(
-                request, 'Unable to add a new blog post at this time. Please try again later')
+                request,
+                '''Unable to add a new blog post at this time.
+                Please try again later''')
     else:
         form = BlogForm()
 
@@ -83,7 +85,10 @@ def edit_blog(request, blog_id):
             messages.success(request, 'Blog post successfully updated')
             return (redirect('blog'))
         else:
-            messages.error(request, 'Unable to update blog post at this time. Please try again later')
+            messages.error(
+                request,
+                '''Unable to update blog post at this time.
+                Please try again later''')
     else:
         form = BlogForm(instance=blog)
         messages.info(

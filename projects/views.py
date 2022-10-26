@@ -51,7 +51,8 @@ def add_project(request):
         else:
             messages.error(
                 request,
-                'Unable to add a new project at this time. Please try again later')
+                '''Unable to add a new project at this time.
+                Please try again later''')
 
     else:
         form = ProjectForm()

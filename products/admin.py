@@ -16,7 +16,12 @@ class ReviewAdmin(admin.ModelAdmin):
     """
     fields = ('product', 'rating', 'content', 'created_by', 'created_at')
     list_display = ('product', 'rating', 'content', 'created_by', 'created_at')
-    readonly_fields = ('rating', 'content', 'created_by', 'product', 'created_at')
+    readonly_fields = (
+        'rating',
+        'content',
+        'created_by',
+        'product',
+        'created_at')
 
 
 admin.site.register(Product, ProductAdmin)
