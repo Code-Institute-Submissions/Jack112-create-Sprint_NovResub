@@ -22,4 +22,4 @@ if settings.DEBUG:
     urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
 
 handler404 = 'sprint.views.handler404'
-handler500 = 'sprint.views.hander500'
+handler500 = 'sprint.views.handler500'
