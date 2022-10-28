@@ -1,0 +1,29 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block page_header %}
+    <header>
+        <div class="error-hero hero-global bg-danger mb-5">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-7">
+                        <h1 class="error-title text-white">Error 500</h1>
+                        <p>It looks like there was a problem with the server.</p>
+                    </div>
+                    <div class="col-md-5">
+                        <i class="fa-solid fa-circle-exclamation text-white"></i>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+{% endblock %}
+
+{% block content %}
+    <section class="error-section">
+        <div class="container">
+            <h2>It looks like something went wrong</h2>
+            <a class="btn-link" href="{% url 'home' %}">Go back</a>
+        </div>
+    </section>
+{% endblock %}
