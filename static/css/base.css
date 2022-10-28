@@ -468,6 +468,18 @@ button {
     margin-left: auto;
 }
 
+@media only screen and (max-width: 625px) {
+    .toast {
+        margin-top: 200px;
+    }
+}
+
+@media only screen and (max-width: 518px) {
+    .toast {
+        margin-top: 400px;
+    }
+}
+
 /* Checkout styles */
 
 .checkout-items {
