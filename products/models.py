@@ -31,6 +31,10 @@ class Product(models.Model):
 
 
 class Review(models.Model):
+    """
+    Review Model Setup
+    """
+
     product = models.ForeignKey(
         Product,
         related_name='reviews',
