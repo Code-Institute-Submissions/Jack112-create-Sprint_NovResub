@@ -24,7 +24,7 @@
         * [Design](#Design)
     * [Features](#Features)
     * [Marketing](#Marketing)
-    * [Testing](#Testing)
+    * [Testing](./TESTING.md)
     * [Technologies](#Technologies)
     * [Bugs](#Bugs)
     * [Deployment](#Deployment)

@@ -1,8 +1,8 @@
-### Testing
+# Testing
 
-#### Manual Testing
+## Manual Testing
 
-#### Superuser / Admin
+### Superuser / Admin
 - **As a Site Owner, I want to be able to add, update and delete products from the store.**
     - Products can be added via the django admin panel or by clicking the "+" icon in the navigation menu and filling in the add product form. When the user has provided the correct data, a new model instance is created and the user is redirected to the new product, followed by a success message that the new product has been created.
 
@@ -46,7 +46,7 @@
 
     - Users who have not registered for an account cannot view the review form and will be asked to log in to their account to add a review.
 
-#### Default User
+### Default User
 - **As a User, I want to be able to view a list of products, so that I can add them to my shopping bag.**
 
     - All products are displayed using Bootstrap columns and responsive CSS to ensure that each product is displayed with its description and image side-by-side.
@@ -93,25 +93,27 @@
 
     - The blog posts user story was tested by visiting the blog posts archive page. The result is that all blog posts are displayed using the bootstrap responsive grid system.
 
-- #### W3C Validator
+- ### W3C Validator
 
     *[W3C Validator](https://validator.w3.org/) was used to ensure that there are no errors in any of the html markup.
 
-- #### Pep8 Validator
+- ### Pep8 Validator
 
     * All files with the .py file extension were tested using the pycodestyle linter to ensure that the code is clean and follows best practices.
 
-- #### Jigsaw Validator
+- ### Jigsaw Validator
 
     * [Jigsaw Validator](https://jigsaw.w3.org/css-validator/) was used to validate all css style sheets.
 
-- #### JS Hint
+- ### JS Hint
 
-- #### Bugs
+    *[JS Hint](https://jshint.com/) was used to validate all JavaScript files.
+
+- ### Bugs
 
     - For loop counter layout. Originally, the templates and designs products pages were supposed to have a layout where every second product would have a flipped version of the product layout. To try and achieve this layout I used the forloop.counter built-in template tag to check if the for loop counter was an even number. The result was that the for loop indexing was causing the product images to display beside the incorrect product information.
 
     - **Originally intended layout:**
     ![Original layout](./docs/wireframes/web-product-desktop.png)
 
-- #### Fixed Bugs
+- ### Fixed Bugs
