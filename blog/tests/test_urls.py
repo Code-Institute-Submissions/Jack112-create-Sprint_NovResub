@@ -39,7 +39,7 @@ class TestUrls(TestCase):
 
     def test_delete_blog_url(self):
         '''
-        Test that blog url uses blogs view.
+        Test that delete_blog url uses delete_blog view.
         '''
         url = reverse('delete_blog', args=[1])
         self.assertEquals(delete_blog, resolve(url).func)
