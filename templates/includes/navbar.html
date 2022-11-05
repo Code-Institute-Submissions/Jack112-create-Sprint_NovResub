@@ -1,57 +1,57 @@
 <nav class="navbar bg-dark navbar-dark fixed-top">
     <div class="brand">
-        <a href="{% url 'home' %}">
+        <a href="{% url 'home' %}" aria-label="Homepage">
             <span class="h1 white">Sprint</span>
         </a>
     </div>
     <ul class="nav-items d-flex">
         <li class="nav-item">
-            <a href="{% url 'templates' %}">Templates</a>
+            <a href="{% url 'templates' %}" aria-label="Templates page">Templates</a>
             <div class="nav-item-border"></div>
         </li>
         <li class="nav-item">
-            <a href="{% url 'designs' %}">Designs</a>
+            <a href="{% url 'designs' %}" aria-label="Designs page">Designs</a>
             <div class="nav-item-border"></div>
         </li>
         <li class="nav-item">
-            <a href="{% url 'projects' %}">Projects</a>
+            <a href="{% url 'projects' %}" aria-label="Projects page">Projects</a>
             <div class="nav-item-border"></div>
         </li>
         <li class="nav-item">
-            <a href="{% url 'blog' %}">Blogs</a>
+            <a href="{% url 'blog' %}" aria-label="Blogs page">Blogs</a>
             <div class="nav-item-border"></div>
         </li>
         {% if request.user.is_superuser %}
             <li class="nav-item">
-                <a href="{% url 'testimonials' %}">Testimonials</a>
+                <a href="{% url 'testimonials' %}" aria-label="Testimonials page">Testimonials</a>
                 <div class="nav-item-border"></div>
             </li>
         {% endif %}
         <li class="nav-item">
-            <a href="{% url 'contact' %}">Contact Us</a>
+            <a href="{% url 'contact' %}" aria-label="Contact page">Contact Us</a>
             <div class="nav-item-border"></div>
         </li>
     </ul>
     <div class="navigation-end d-flex">
         {% if request.user.is_superuser %}
         <div class="nav-product">
-            <a href="{% url 'add_product' %}"><i class="fa-solid fa-plus white"></i></a>
+            <a href="{% url 'add_product' %}" aria-label="Add product page"><i class="fa-solid fa-plus white"></i></a>
         </div>
         {% endif %}
         <div class="nav-login">
             {% if request.user.is_authenticated %}
-                <a href="{% url 'account_logout' %}" class="d-inline-block ml-3"><i class="fa-solid fa-right-from-bracket white"></i></a>
-                <a href="{% url 'profile' %}" class="d-inline-block ml-3"><i class="fa-solid fa-user white"></i></a>
+                <a href="{% url 'account_logout' %}" aria-label="Logout page" class="d-inline-block ml-3"><i class="fa-solid fa-right-from-bracket white"></i></a>
+                <a href="{% url 'profile' %}" aria-label="Profile page" class="d-inline-block ml-3"><i class="fa-solid fa-user white"></i></a>
             {% else %}
-                <a href="{% url 'account_login' %}" class="d-inline-block ml-3"><i class="fa-solid fa-user white"></i></a>
+                <a href="{% url 'account_login' %}" aria-label="Login page" class="d-inline-block ml-3"><i class="fa-solid fa-user white"></i></a>
             {% endif %}
         </div>
         <div class="nav-shopping d-flex justify-content-end">
             <div class="nav-bag">
-                <a href="{% url 'bag' %}"><i class="fa-solid fa-bag-shopping {% if total %} bag-gold {% else %} white {% endif %}"></i></a>
+                <a href="{% url 'bag' %}" aria-label="Shopping bag page"><i class="fa-solid fa-bag-shopping {% if total %} bag-gold {% else %} white {% endif %}"></i></a>
             </div>
             <div class="nav-checkout">
-                <a href="{% url 'checkout' %}"><i class="fa-solid fa-cart-shopping white"></i></a>
+                <a href="{% url 'checkout' %}" aria-label="Checkout page"><i class="fa-solid fa-cart-shopping white"></i></a>
             </div>
         </div>
     </div>
