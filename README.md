@@ -436,3 +436,5 @@ Features to be included:
   * [Favicon.io](https://favicon.io/) allowed me to generate a favicon for the project.
 
   * [Slick Slider JS](https://kenwheeler.github.io/slick/) was used to generate the testimonial slider on the homepage.
+
+  * [Boutique Ado](https://github.com/Code-Institute-Solutions/boutique_ado_v1) was used to assist in adding the stripe payment and order functionailty to the project
