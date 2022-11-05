@@ -177,12 +177,6 @@ button {
     transition: all 0.25s ease-in-out;
 }
 
-.about-section .service-icon i:hover {
-    background-color: white;
-    color: var(--baby-blue);
-    transition: all 0.25s ease-in-out;
-}
-
 @media only screen and (max-width: 991px) {
     .about-section .service-item {
         margin-bottom: 50px;
