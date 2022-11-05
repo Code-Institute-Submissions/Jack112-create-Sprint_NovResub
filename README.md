@@ -158,32 +158,26 @@ Features to be included:
 - On smaller screen sizes, the navbar collapses into a more mobile friendly layout.
 
 ![Navigation](./docs/features/navbar.png)
-![Mobile Navigation](./docs/features/navbar-mobile.png)
 
 #### Homepage
 - The homepage provides users with a short intro about Sprint Designs. Users can view the multiple services provided by the company and can also read all the reviews written by other customers.
 
 ![Homepage](./docs/features/homepage-desktop.png)
-![Homepage mobile](./docs/features/home-mobile.png)
 
 #### Testimonials
 - Admin users have access to the testimonials archive page where they can view and delete all testimonials.
 
 ![Testimonials](./docs/features/testimonials-desktop.png)
-![Testimonials Mobile](./docs/features/testimonials-mobile.png)
 
 - Users who would like to add their own testimonial can do so by filling in the form with the required information. Once the user has successfully added their testimonial it will be added to the slider on the homepage.
 
 ![Testimonials Form](./docs/features/add-testimonial-desktop.png)
-![Testimonials Form Mobile](./docs/features/add-testimonial-mobile.png)
 
 #### Products
 - The products page allow users to view all the products sold on the site. Users can visit the templates page which will display all products relating to templates. Or they can visit the designs products page which lists all design products.
 
 ![Templates Products](./docs/features/web-product-desktop.png)
-![Templates Products Mobile](./docs/features/web-product-mobile.png)
 ![Design Products](./docs/features/design-product-desktop.png)
-![Design Products Mobile](./docs/features/design-product-mobile.png)
 
 #### Product Detail & Product Review
 - As users browse through the array of products they can view a single product to get a better look at the product that they might purchase. Users can also choose to whether or not they would like to leave a review for the product.
@@ -191,54 +185,44 @@ Features to be included:
 - Admin users have access to all reviews and can delete reviews if they wish.
 
 ![Single Product](./docs/features/product-detail-desktop.png)
-![Single Product Mobile](./docs/features/product-detail-mobile.png)
 
 #### Add Product & Edit Product
 - Admin users have access to add a new product. Admin users will be presented with a form that they must fill out in order to successfully add a new product.
 
 ![Add Product](./docs/features/add-product-desktop.png)
-![Add Product Mobile](./docs/features/add-product-mobile.png)
 
 - Admin users also have access to update any existing products by filling in the edit product form.
 
 ![Edit Product](./docs/features/edit-product-desktop.png)
-![Edit Product Mobile](./docs/features/edit-product-mobile.png)
 
 #### Shopping bag
 - The shopping bag feature allows users to view, add, edit, and delete all the products that they have added to their shopping bag.
 
 ![Shopping Bag](./docs/features/bag-view-desktop.png)
-![Shopping Bag Mobile](./docs/features/shopping-bag-mobile.png)
 
 #### Checkout
 - When the user is ready to purchase a product they can visit the checkout page. Users will be required to fill in information such as their email, address and credit card information in order to checkout successfully.
 
 ![Checkout](./docs/features/checkout-view-desktop.png)
-![Checkout Mobile](./docs/features/checkout-view-mobile.png)
 
 #### Checkout Success
 - When a user has successfully purchased a product they will be brought to the checkout success page. Users will be able to view their order information.
 
 ![Checkout Success](./docs/features/checkout-success-desktop.png)
-![Checkout Success Mobile](./docs/features/checkout-success-mobile.png)
 
 #### Blogs
 - The blogs page is an archive for all blog posts created by Sprint Designs.
 
 ![Blogs](./docs/features/blogs-desktop.png)
-![Blogs Mobile](./docs/features/blogs-mobile.png)
 
 - Admin users have the ability to create, update, and delete blog posts.
 
 ![Add Blog](./docs/features/add-blog-desktop.png)
-![Add Blog Mobile](./docs/features/add-blog-mobile.png)
 ![Edit Blog](./docs/features/edit-blog-desktop.png)
-![Edit Blog Mobile](./docs/features/edit-blog-mobile.png)
 
 - The single blog view allows users to have a better view of an individual blog post.
 
 ![Single Blog](./docs/features/single-blog-desktop.png)
-![Single Blog Mobile](./docs/features/single-blog-mobile.png)
 
 #### Projects
 - The projects feature was created to allow users to view past work at Sprint Designs.
@@ -246,17 +230,14 @@ Features to be included:
 - The projects archive page allows users to browse through all of the recent projects.
 
 ![Projects](./docs/features/projects-desktop.png)
-![Projects Mobile](./docs/features/projects-mobile.png)
 
 - The single project view allows users to isolate a single project for a better read.
 
 ![Single Project](./docs/features/project-detail-desktop.png)
-![Single Project Mobile](./docs/features/project-detail-mobile.png)
 
 - Admin users have access to create, update and delete all projects.
 
 ![Add Project](./docs/features/add-project-desktop.png)
-![Add Project Mobile](./docs/wireframes/add-project-mobile.png)
 
 ![Edit Project](./docs/features/edit-project-desktop.png)
 
@@ -267,33 +248,27 @@ Features to be included:
 - The user profile page allows users to fill in their information and also view any of their past orders.
 
 ![User Profile](./docs/features/profile-desktop.png)
-![User Profile Mobile](./docs/features/profile-mobile.png)
 
 #### Login and Logout
 - Users who have already created an account can log in to and logout of their account when visiting the site.
 
 ![User Login](./docs/features/user-login-form-desktop.png)
-![User Login](./docs/features/user-login-mobile.png)
 ![User Logout](./docs/features/user-logout-desktop.png)
-![User Logout Mobile](./docs/features/user-logout-mobile.png)
 
 #### Sign up
 - Regular users can choose whether or not they would like to register for an account. By registering, users can expect to gain access to new features, such as leaving a review on a product and having their own user profile.
 
 ![User Sign Up](./docs/features/user-registration-desktop.png)
-![User Sign Up Mobile](./docs/features/user-registration-mobile.png)
 
 #### Contact page
 -The contact page provides users with all the necessary contact details needed to get in touch with the business.
 
 ![Contact Page](./docs/features/contact-desktop.png)
-![Contact Page Mobile](./docs/features/contact-mobile.png)
 
 #### 404 Error Page
 - The 404 error page notifies the user if they have visited a page on the site that does not exist. This lets the user know that they should follow the link back to an existing page on the site.
 
 ![404 Error Page](./docs/features/error-desktop.png)
-![404 Error Page Mobile](./docs/features/error-mobile.png)
 
 #### Footer
 - The footer provides users with contact details as well as the option to sign-up to the company newsletter.
