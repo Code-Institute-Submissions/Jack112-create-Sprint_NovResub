@@ -141,7 +141,7 @@ Features to be included:
 * The Order model has a User profile connected as a foreign key along with all the necessary details needed when processing an order. The Line item model also holds a foreign key to an instance of the Order model so that multiple order items can relate to a single order.
 
 **Blogs**
-* The Blog model consists of title, name, content, image url and image fields.
+* The Blog model consists of title, name, content, image url and image fields. The blog app allows users to view both an archive of blog post and single blog post.
 
 ### Surface
 
