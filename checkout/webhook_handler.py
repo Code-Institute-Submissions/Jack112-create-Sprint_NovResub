@@ -130,6 +130,7 @@ class StripeWH_Handler:
         """
         Handle the payment_intent.payment_failed webhook from Stripe
         """
+        print('from webook. Called okay')
         return HttpResponse(
             content=f'Webhook received: {event["type"]}',
             status=200)
