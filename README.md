@@ -442,6 +442,17 @@ Features to be included:
 
  - Run the following commad - git clone [LINK COPIED FROM REPOSITORY].
 
+### Forking
+  - Navigate to [GitHub](https://github.com/) and sign in.
+
+  - Navigate to the [Sprint](https://github.com/Jack112-create/Sprint) repository.
+
+  - Click the Fork button at the top right of the screen.
+
+  - Click the Create fork button.
+
+  - You should now have a forked version of the project in your repositories.
+
 ### Credits
   * [Pexels](https://www.pexels.com/) for the images used throughout the project.
 
