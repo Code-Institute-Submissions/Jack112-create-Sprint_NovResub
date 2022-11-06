@@ -3,6 +3,8 @@
 ## Introduction
 - Sprint Designs is a fully responsive e-commerce site built using Django. Sprint Designs is a fictional company based in Dublin that offers a B2B service. Sprint Designs provides businesses with robust and easy to customize web templates, as well as graphic designs completely custom to the businesses needs. Users can purchase templates and designs, view recent projects, read testimonials and also create an account. Site admin have certain privileges such as adding,removing or updating products.
 
+- Stripe Test Card Number: 4242424242424242
+
 - Sprint Designs is my fifth and final project as part of the Code Institute Full Stack Software Development course. Unfortunately, due to time constraints there are are many of the projects where I wish to have developed better.
 
 ![Screenshot of responsive site](./docs/am-i-responsive.png)
