@@ -80,6 +80,23 @@ class TestViews(TestCase):
         self.assertEquals(response.status_code, 200)
         self.assertTemplateUsed(response, 'projects/edit_project.html')
 
+    def test_edit_project_POST(self):
+        '''
+        Test that post requests to edit_project view updates project instance
+        '''
+        project = self.projects.get(name='Test Project')
+        response = self.client.post(reverse(
+            'edit_project',
+            kwargs={'project_id': project.id}),
+            {
+                'name': "Updated project title",
+                'description': 'Updated description',
+            },
+            )
+        self.assertEqual(response.status_code, 302)
+        project.refresh_from_db()
+        self.assertEqual(project.name, 'Updated project title')
+
     def test_add_project_view_POST(self):
         '''
         Test that post requests to add_project view

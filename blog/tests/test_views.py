@@ -13,7 +13,10 @@ class TestViews(TestCase):
 
     def setUp(self):
         # Setup a single blog
-        blog = Blog.objects.create(title="Test Blog", name="Jack")
+        blog = Blog.objects.create(
+            title="Test Blog",
+            name="Jack",
+            content='Content')
         self.blogs = Blog.objects.all()
 
         # User setup and login
@@ -95,9 +98,13 @@ class TestViews(TestCase):
         response = self.client.post(reverse(
             'edit_blog',
             kwargs={'blog_id': blog.id}),
-            {'title': 'Updated blog title'},
+            {
+                'title': 'Updated blog title',
+                'name': "Jack",
+                'content': 'Content update',
+            },
             )
-        self.assertEqual(response.status_code, 200)
+        self.assertEqual(response.status_code, 302)
         blog.refresh_from_db()
         self.assertEqual(blog.title, 'Updated blog title')
 

@@ -116,4 +116,6 @@
     - **Originally intended layout:**
     ![Original layout](./docs/wireframes/web-product-desktop.png)
 
+## Automated Testing
+
 - ### Fixed Bugs
