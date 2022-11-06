@@ -1,7 +1,7 @@
 # Sprint Designs
 
 ## Introduction
-- Sprint Designs is a fully responsive e-commerce site built using Django. Sprint Designs is a fictional company based in Dublin that offers a B2B service. Sprint Designs provides businesses with robust and easy to customize web templates, as well as graphic designs completely custom to the businesses needs. Users can purchase templates and designs, view recent projects, read testimonials and also create an account. Site admin have certain privileges such as adding,removing or updating products.
+- Sprint Designs is a fully responsive e-commerce site built using Django. Sprint Designs is a fictional company based in Dublin that offers a B2B service. Users can purchase templates and designs, view recent projects, read testimonials and also create an account. Site admin have certain privileges such as adding,removing or updating products.
 
 - Sprint Designs is my fifth and final project as part of the Code Institute Full Stack Software Development course. Unfortunately, due to time constraints there are are many of the projects where I wish to have developed better.
 
@@ -13,6 +13,7 @@
 
 ## Table of Contents
 
+* [Business Model](#business-model)
 * [User Experience](#Introduction)
     * [Site Goals](#Site-Goals)
     * [User Stories](#User-Stories)
@@ -31,6 +32,10 @@
     * [Bugs](#Bugs)
     * [Deployment](#Deployment)
     * [Credits](#Credits)
+
+## Business Model
+- Sprint Designs provides businesses with robust and easy to customize web templates, as well as graphic designs completely custom to the businesses needs.
+
 ## UX
 
 ### User Stories
