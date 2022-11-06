@@ -1,6 +1,12 @@
 from django.test import TestCase
 from django.urls import reverse, resolve
-from projects.views import projects, project, add_project, edit_project, delete_project
+from projects.views import (
+    projects,
+    project,
+    add_project,
+    edit_project,
+    delete_project
+)
 
 
 class TestUrls(TestCase):
