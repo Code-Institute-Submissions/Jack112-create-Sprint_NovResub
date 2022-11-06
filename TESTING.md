@@ -109,12 +109,16 @@
 
     *[JS Hint](https://jshint.com/) was used to validate all JavaScript files.
 
+- ### Lighthouse
+
+    * ![Lighthouse Score](./docs/lighthouse.png)
+
+## Automated Testing
+- [Automated testing pdf](./docs/sprint-automated-testing.pdf)
+
 - ### Bugs
 
     - For loop counter layout. Originally, the templates and designs products pages were supposed to have a layout where every second product would have a flipped version of the product layout. To try and achieve this layout I used the forloop.counter built-in template tag to check if the for loop counter was an even number. The result was that the for loop indexing was causing the product images to display beside the incorrect product information.
 
     - **Originally intended layout:**
     ![Original layout](./docs/wireframes/web-product-desktop.png)
-
-## Automated Testing
-- [Automated testing pdf](./docs/sprint-automated-testing.pdf)
