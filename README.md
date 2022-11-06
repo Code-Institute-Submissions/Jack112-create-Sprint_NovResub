@@ -243,7 +243,6 @@ Features to be included:
 
 ![Edit Project](./docs/features/edit-project-desktop.png)
 
-
 #### Profile
 - If a user has created an account they gain access to their own user profile.
 
@@ -429,6 +428,19 @@ Features to be included:
 25. To use local db while developing and Postgresql for production, add the following lines of code to settings.py.
 
 ![Database Config](./docs/database-config.png)
+
+### Cloning
+ - Navigate to [GitHub](https://github.com/) and sign in.
+
+ - Navigate to the [Sprint](https://github.com/Jack112-create/Sprint) repository.
+
+ - Click the Code dropdown button and copy the link from the input field.
+
+ - Create a directory on your machine to store the project.
+
+ - Open up your terminal on your machine and navigate into the new directory.
+
+ - Run the following commad - git clone [LINK COPIED FROM REPOSITORY].
 
 ### Credits
   * [Pexels](https://www.pexels.com/) for the images used throughout the project.
